@@ -10,9 +10,7 @@ $navbar-height: 90px;
     background-color: red;
 
     &-content {
-        max-width: 1210px;
-        margin: 0 auto;
-        padding: 0 10px;
+        @extend %container;
         height: inherit;
         display: flex;
         justify-content: space-between;
