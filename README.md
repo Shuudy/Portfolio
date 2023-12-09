@@ -5,7 +5,3 @@
 Bienvenue sur mon portfolio dédié au BTS SIO, développé avec Laravel !
 
 Explorez le code, contactez-moi pour des collaborations !
-
-📫 **Contact :**
-- LinkedIn : [Profil LinkedIn]
-- Email : [Adresse e-mail]
