@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('index');
 Route::view('/realisation', 'realisation');
+
+Route::prefix('admin')->group(function (){
+    Route::view('/', 'admin.index');
+});
