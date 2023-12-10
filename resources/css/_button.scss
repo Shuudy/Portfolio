@@ -16,4 +16,17 @@
             text-decoration: underline;
         }
     }
+
+    &-section {
+        color: #fff;
+        background-color: #69727d;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: .7px;
+        padding: 12px 24px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }

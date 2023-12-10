@@ -2,6 +2,10 @@
 
 section.section {
     padding: 12px 45px 27px 45px;
+
+    &.background {
+        background-color: #eaeaea;
+    }
 }
 
 .section {
@@ -11,8 +15,8 @@ section.section {
 
     &-title {
         text-align: center;
-        margin: 40px 0px 8px 0px;
-        padding: 15px 15px 15px 15px;
+        margin: 40px 0px 40px 0px; // margin: 40px 0px 8px 0px;
+        padding: 15px;
 
         h2 {
             font-size: 45px;
@@ -22,5 +26,12 @@ section.section {
             letter-spacing: 2px;
             color: rgb(50,50,50);
         }
+    }
+
+    &-btn {
+        margin-top: 71px;
+        margin-bottom: 126px;
+        display: flex;
+        justify-content: center;
     }
 }
