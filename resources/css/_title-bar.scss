@@ -1,0 +1,35 @@
+$title-bar-height: 485px + $navbar-height;
+
+.title-bar {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 485px + $navbar-height;
+
+    &-content {
+        height: $title-bar-height + $navbar-height;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &-subtitle {
+        color: #fff;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    &-title {
+        color: #fff;
+        font-size: 60px;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        line-height: 1.2;
+        max-width: 1000px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+}

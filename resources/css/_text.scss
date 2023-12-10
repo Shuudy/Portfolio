@@ -1,0 +1,10 @@
+
+.text {
+    padding-top: 90px;
+    &-content {
+        @extend %container-text;
+        line-height: 1.7;
+        font-size: 17px;
+        text-align: left;
+    }
+}

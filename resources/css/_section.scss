@@ -30,8 +30,34 @@ section.section {
 
     &-btn {
         margin-top: 71px;
-        margin-bottom: 126px;
+        margin-bottom: 126px - 27px;
         display: flex;
         justify-content: center;
+    }
+
+    &.other {
+        .section-content {
+            max-width: 1090px;
+            padding: 0 60px 60px 60px;
+        }
+        
+        .section-title {
+            text-align: left;
+            padding: 0;
+            margin-bottom: 30px;
+
+            h2 {
+                font-size: 2em;
+                letter-spacing: normal;
+                font-weight: bold;
+                line-height: 1.1;
+            }
+        }
+
+        @media screen and (max-width: 570px) {
+            .section-content {
+                padding: 0 10px;
+            }           
+        }
     }
 }
