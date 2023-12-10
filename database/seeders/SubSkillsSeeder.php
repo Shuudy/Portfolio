@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\SubSkills;
+use App\Models\SubSkill;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -43,6 +43,6 @@ class SubSkillsSeeder extends Seeder
             ['name' => 'Développer son projet professionnel', 'skill_id' => 6]
         ];
 
-        SubSkills::insert($subSkills);
+        SubSkill::insert($subSkills);
     }
 }

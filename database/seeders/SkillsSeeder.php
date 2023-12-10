@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Skills;
+use App\Models\Skill;
 use Illuminate\Database\Seeder;
 
 class SkillsSeeder extends Seeder
@@ -21,6 +21,6 @@ class SkillsSeeder extends Seeder
             ['name' => 'Organiser son développement professionnel']
         ];
 
-        Skills::insert($skills);
+        Skill::insert($skills);
     }
 }
