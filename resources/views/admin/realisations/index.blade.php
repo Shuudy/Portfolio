@@ -19,18 +19,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for($i=0;$i<10;$i++)
+                    @forelse($realisations as $realisation)
                         <tr>
-                            <td>{{ $i }}</td>
+                            <td>{{ $realisation->id }}</td>
                             <td><a class="link" href="">Sacem, parrem, easter_days</a></td>
                             <td>Weakest, link, selection</td>
                             <td>30 May, 2023</td>
                             <td>30 May, 2023</td>
                             <td><a class="action" href="">Edit</a></td>
                         </tr>
-                    @endfor
+                    @empty
+                        <tr>
+                            <td colspan="6">No realisation found.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
+            {{ $realisations->links() }}
         </div>
     </div>
 </div>

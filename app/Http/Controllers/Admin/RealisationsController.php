@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Realisation;
 use Illuminate\Http\Request;
 
 class RealisationsController extends Controller
 {
     public function index()
     {
-        
-        return view('admin.realisations.index');
+        $realisations = Realisation::paginate(10);
+        return view('admin.realisations.index', ['realisations' => $realisations]);
     }
 }
