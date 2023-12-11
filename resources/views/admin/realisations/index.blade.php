@@ -22,8 +22,8 @@
                     @forelse($realisations as $realisation)
                         <tr>
                             <td>{{ $realisation->id }}</td>
-                            <td><a class="link" href="">Sacem, parrem, easter_days</a></td>
-                            <td>Weakest, link, selection</td>
+                            <td><a class="link" href="">{{ $realisation->title }}</a></td>
+                            <td>{{ $realisation->subtitle }}</td>
                             <td>30 May, 2023</td>
                             <td>30 May, 2023</td>
                             <td><a class="action" href="">Edit</a></td>
