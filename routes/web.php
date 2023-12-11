@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\RealisationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index')->name('index');
 Route::view('/realisation', 'realisation');
 
-Route::prefix('admin')->group(function (){
+Route::prefix('admin')->name('admin.')->group(function (){
     Route::view('/', 'admin.index');
+
+    Route::prefix('realisations')->name('realisations.')->group(function (){
+        Route::get('/', [RealisationsController::class, 'index'])->name('index');
+    });
 });

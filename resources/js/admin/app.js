@@ -1,3 +1,1 @@
-import '../../css/admin/app.css';
-
-import './main.js';
+import '../../css/admin/app.scss';

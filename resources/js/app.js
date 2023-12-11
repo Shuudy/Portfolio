@@ -1,6 +1,4 @@
-
 import '../css/app.scss';
-
 
 const navbar = document.querySelector('.navbar');
 
