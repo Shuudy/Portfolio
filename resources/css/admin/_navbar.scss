@@ -1,0 +1,70 @@
+$navbar-height: 56px;
+
+.navbar {
+
+    height: $navbar-height;
+    box-shadow: inset 0 -1px 0 0 #dadfe5;
+    background-color: #fff;
+
+    &-content {
+        @extend %container;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-right, &-left {
+        display: flex;
+        align-items: center;
+    }
+
+    &-left {
+        height: inherit;
+    }
+
+    &-infos {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-image, img {
+            height: 32px;
+        }
+        img {
+            width: 32px;
+            border-radius: 50%;
+        }
+    }
+
+    &-link {
+        height: inherit;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+
+        li {
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            > a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                height: $navbar-height;
+            }
+
+            &.active {
+                > a::after {
+                    content: "";
+                    position: absolute;
+                    left: 0px;
+                    right: 0px;
+                    bottom: -0rem;
+                    border: 1px solid $color-main;
+                }
+            }
+        }
+    }
+}
