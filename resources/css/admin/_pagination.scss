@@ -1,0 +1,45 @@
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pagination {
+    display: flex;
+
+    li {
+        a, span {
+            display: inline-block;
+            padding: 8px 12px;
+            
+        }
+        a:hover {
+            background-color: #eee;
+            border-color: #ddd;
+            color: #23527c;
+        }
+        
+        &.active span {
+            background-color: $color-main;
+            border-color: $color-main;
+            color: #fff;
+        }
+
+        .page-link {
+            color: #72777a;
+            border: 1px solid #e2e8f0;
+        }
+
+        &.disabled {
+            span, a {
+                color: #999;
+                cursor: not-allowed;
+            }
+        }
+    }
+
+    &-info {
+        color: #72777a;
+    }
+}
