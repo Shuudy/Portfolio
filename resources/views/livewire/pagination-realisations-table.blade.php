@@ -14,11 +14,11 @@
             @forelse($realisations as $realisation)
             <tr>
                 <td>{{ $realisation->id }}</td>
-                <td><a class="link" href="">{{ $realisation->title }}</a></td>
+                <td><a class="link" href="{{ route('admin.realisations.edit', $realisation->id) }}">{{ $realisation->title }}</a></td>
                 <td>{{ $realisation->subtitle }}</td>
                 <td>{{ \Carbon\Carbon::parse($realisation->updated_at)->isoFormat('D MMM, G') }}</td>
                 <td>{{ \Carbon\Carbon::parse($realisation->created_at)->isoFormat('D MMM, G') }}</td>
-                <td><a class="action" href="">Edit</a></td>
+                <td><a class="action" href="{{ route('admin.realisations.edit', $realisation->id) }}">Edit</a></td>
             </tr>
             @empty
             <tr>

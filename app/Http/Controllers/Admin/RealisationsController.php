@@ -14,6 +14,6 @@ class RealisationsController extends Controller
 
     public function edit(Realisation $realisation)
     {
-        return view('admin.realisations.edit');
+        return view('admin.realisations.edit', compact('realisation'));
     }
 }
