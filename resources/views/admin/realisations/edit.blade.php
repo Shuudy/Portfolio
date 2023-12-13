@@ -17,8 +17,7 @@
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
                     <input type="text" name="subtitle" id="subtitle"" class="form-control">
-                </div>
-                <a href="" class="btn">Quoicoubebou</a>
+                </div>                
             </form>
         </div>
     </div>
