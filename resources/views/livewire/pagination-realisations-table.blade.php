@@ -16,8 +16,8 @@
                 <td>{{ $realisation->id }}</td>
                 <td><a class="link" href="">{{ $realisation->title }}</a></td>
                 <td>{{ $realisation->subtitle }}</td>
-                <td>30 May, 2023</td>
-                <td>30 May, 2023</td>
+                <td>{{ \Carbon\Carbon::parse($realisation->updated_at)->isoFormat('D MMM, G') }}</td>
+                <td>{{ \Carbon\Carbon::parse($realisation->created_at)->isoFormat('D MMM, G') }}</td>
                 <td><a class="action" href="">Edit</a></td>
             </tr>
             @empty

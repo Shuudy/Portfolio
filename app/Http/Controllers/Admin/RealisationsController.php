@@ -11,4 +11,9 @@ class RealisationsController extends Controller
     {
         return view('admin.realisations.index');
     }
+
+    public function edit(Realisation $realisation)
+    {
+        return view('admin.realisations.edit');
+    }
 }

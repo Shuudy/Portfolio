@@ -21,7 +21,11 @@ Route::view('/realisation', 'realisation');
 Route::prefix('admin')->name('admin.')->group(function (){
     Route::view('/', 'admin.index')->name('index');
 
-    Route::prefix('realisations')->name('realisations.')->group(function (){
-        Route::get('/', [RealisationsController::class, 'index'])->name('index');
+    Route::prefix('realisations')->name('realisations.')->controller(RealisationsController::class)->group(function (){
+        Route::get('/', 'index')->name('index');
+
+        Route::get('/create', 'create')->name('create');
+
+        Route::get('/edit/{realisation}', 'edit')->name('edit');
     });
 });
