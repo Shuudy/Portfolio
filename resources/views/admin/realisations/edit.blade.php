@@ -9,14 +9,22 @@
         <div class="page-block">
             <form action="" method="post">
                 @method('PATCH')
-                @csrf                
+                @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" name="title" id="title" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
-                    <input type="text" name="subtitle" id="subtitle"" class="form-control">
+                    <input type="text" name="subtitle" id="subtitle"" class=" form-control">
+                </div>
+                <div class="form-group">
+                    <label for="skills">Compétences</label>
+                    <select name="skills[]" id="skills" multiple>
+                        @foreach ($skills as $skill)
+                        <option value="{{ $skill->id }}">{{ $skill->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="content">Contenu</label>
@@ -28,8 +36,18 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag@2.0.1/dist/js/multi-select-tag.js"></script>
 <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
+    new MultiSelectTag('skills', {
+        rounded: true,
+        placeholder: 'Search', // default Search...
+        tagColor: {
+            borderColor: '#206bc4',
+            textColor: '#fff',
+            bgColor: '#206bc4',
+        }
+    })
     CKEDITOR.replace('content', {
         height: '300px'
     });

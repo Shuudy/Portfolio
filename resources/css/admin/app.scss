@@ -1,5 +1,5 @@
 
-$color-main: rgb(67, 69, 201);
+$color-main: #206bc4;
 
 @import '../reset';
 @import 'reset';
@@ -10,3 +10,4 @@ $color-main: rgb(67, 69, 201);
 @import 'pagination';
 @import 'table';
 @import 'form';
+@import 'multi-select-tag';
