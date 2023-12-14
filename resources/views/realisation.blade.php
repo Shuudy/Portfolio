@@ -37,7 +37,7 @@ Trois grandes courses d’un jour la même année, quatre victoires en World Tou
         <div class="card-list">
             @for($i=0;$i<3;$i++)
             <div class="card">
-                <div class="card-image"><a href=""><img src="https://i.ibb.co/ZWRgmZj/405768102-1096885844643841-1093352958284445260-n.jpg" alt="" loading="lazy"></a></div>
+                <div class="card-image"><a href=""><img src="https://i.ibb.co/b30WqV8/408005283-258814217207388-8741290683313476433-n-1.jpg" alt="" loading="lazy"></a></div>
                 <div class="card-content">                 
                     <h2 class="card-title"><a href="">Laporte, dans le meilleur des mondes</a></h2>
                 </div>

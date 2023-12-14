@@ -17,9 +17,21 @@
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
                     <input type="text" name="subtitle" id="subtitle"" class="form-control">
-                </div>                
+                </div>
+                <div class="form-group">
+                    <label for="content">Contenu</label>
+                    <textarea class="form-control" name="content" id="content"></textarea>
+                </div>
+                <button class="btn">Modifier</button>
             </form>
         </div>
     </div>
 </div>
+
+<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('content', {
+        height: '300px'
+    });
+</script>
 @endsection
