@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\RealisationsController;
 
 /*
@@ -19,7 +20,10 @@ Route::view('/', 'index')->name('index');
 Route::view('/realisation', 'realisation');
 
 Route::prefix('admin')->name('admin.')->group(function (){
-    Route::view('/', 'admin.index')->name('index');
+
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+    Route::view('/', 'admin.index')->name('index');    
 
     Route::prefix('realisations')->name('realisations.')->controller(RealisationsController::class)->group(function (){
         Route::get('/', 'index')->name('index');
