@@ -19,21 +19,25 @@ use App\Http\Controllers\Admin\RealisationsController;
 Route::view('/', 'index')->name('index');
 Route::view('/realisation', 'realisation');
 
-Route::prefix('admin')->name('admin.')->group(function (){
+Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::prefix('login')->controller(AuthController::class)->group(function (){
-        Route::get('/', 'index')->name('login');
-        Route::post('/', 'login')->name('login-post');
+    Route::controller(AuthController::class)->group(function () {
+        Route::get('/login', 'index')->name('login');
+        Route::post('/login', 'login')->name('login-post');
+
+        Route::get('/logout', 'logout')->name('logout');
     });
 
-    Route::view('/', 'admin.index')->name('index');    
+    Route::middleware('auth')->group(function () {
+        Route::view('/', 'admin.index')->name('index');
 
-    Route::prefix('realisations')->name('realisations.')->controller(RealisationsController::class)->group(function (){
-        Route::get('/', 'index')->name('index');
+        Route::prefix('realisations')->name('realisations.')->controller(RealisationsController::class)->group(function () {
+            Route::get('/', 'index')->name('index');
 
-        Route::get('/create', 'create')->name('create');
+            Route::get('/create', 'create')->name('create');
 
-        Route::get('/edit/{realisation}', 'edit')->name('edit');
-        Route::patch('/update/{realisation}', 'update')->name('update');
+            Route::get('/edit/{realisation}', 'edit')->name('edit');
+            Route::patch('/update/{realisation}', 'update')->name('update');
+        });
     });
 });

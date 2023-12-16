@@ -4,10 +4,10 @@
         <div class="navbar-right">
             <div class="navbar-infos">
                 <div class="navbar-infos-image">
-                    <img src="https://i.ibb.co/pyprCSg/407925637-1066198397714555-7952520508365130508-n.jpg" alt="">
+                    <img src="https://i.ibb.co/ns9Lmtk/410243901-329741656616289-2755236118860428269-n.jpg" alt="">
                 </div>
-                <span>John Doe</span>
-                <a href=""><i class="ti ti-logout"></i></a>
+                <span>{{ auth()->user()->username }}</span>
+                <a href="{{ route('admin.logout') }}"><i class="ti ti-logout"></i></a>
             </div>
         </div>
     </div>
