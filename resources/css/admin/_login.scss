@@ -1,0 +1,26 @@
+
+.login-page {
+    margin-top: 100px;
+    &-content {
+        height: inherit;
+        max-width: 30rem;
+        margin: 0 auto;
+        background-color: #fff;
+        border: 1px solid rgba(4, 32, 69, .14);       
+    }
+
+    &-body {
+        padding: 2.5rem;
+    }
+
+    &-title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn.w-100 {
+        margin-top: 1em;
+    }
+}

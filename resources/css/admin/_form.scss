@@ -60,6 +60,10 @@
     background-color: #206bc4;
     text-align: center;
 
+    &.w-100 {
+        width: 100%;
+    }
+
     &:hover {
         background-color: rgba(32, 107, 196, .8);
         border-color: transparent;

@@ -21,7 +21,10 @@ Route::view('/realisation', 'realisation');
 
 Route::prefix('admin')->name('admin.')->group(function (){
 
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::prefix('login')->controller(AuthController::class)->group(function (){
+        Route::get('/', 'index')->name('login');
+        Route::post('/', 'login')->name('login-post');
+    });
 
     Route::view('/', 'admin.index')->name('index');    
 
