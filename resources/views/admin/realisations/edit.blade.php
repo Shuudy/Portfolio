@@ -7,17 +7,22 @@
     <div class="page-content">
         <h2 class="page-title">Réalisations</h2>
         <div class="page-block">
-            <form action="" method="post">
+            <form action="{{ route('admin.realisations.update', $realisation->id) }}" method="post" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
 
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" name="title" id="title" class="form-control">
+                    <input type="text" name="title" id="title" value="{{ $realisation->title }}" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
-                    <input type="text" name="subtitle" id="subtitle"" class=" form-control">
+                    <input type="text" name="subtitle" id="subtitle" value="{{ $realisation->subtitle }}" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" name="image" id="image" accept="image/png, image/gif, image/jpeg" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -30,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="content">Contenu</label>
-                    <textarea class="form-control" name="content" id="content"></textarea>
+                    <textarea class="form-control" name="content" id="content">{{ $realisation->content }}</textarea>
                 </div>
                 <button class="btn">Modifier</button>
             </form>

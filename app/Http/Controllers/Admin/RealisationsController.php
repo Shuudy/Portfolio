@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Realisation;
 use App\Models\Skill;
+use App\Models\Realisation;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class RealisationsController extends Controller
 {
@@ -17,5 +19,31 @@ class RealisationsController extends Controller
     {
         $skills = Skill::all();
         return view('admin.realisations.edit', compact('realisation', 'skills'));
+    }
+
+    public function update(Request $request, Realisation $realisation)
+    {
+        $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'content' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);    
+
+        if ($realisation->image) {
+            Storage::disk('public')->delete($realisation->image);
+        }
+        $realisation->update($request->except('image'));
+
+        if ($request->hasFile('image')) {
+            $fileName = sha1(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
+
+            $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
+
+            $realisation->image = $imagePath;
+            $realisation->save();
+        }
+
+        return redirect()->route('admin.realisations.index');
     }
 }

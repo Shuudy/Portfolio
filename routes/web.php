@@ -27,5 +27,6 @@ Route::prefix('admin')->name('admin.')->group(function (){
         Route::get('/create', 'create')->name('create');
 
         Route::get('/edit/{realisation}', 'edit')->name('edit');
+        Route::patch('/update/{realisation}', 'update')->name('update');
     });
 });
