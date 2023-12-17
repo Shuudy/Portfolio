@@ -15,6 +15,36 @@ class RealisationsController extends Controller
         return view('admin.realisations.index');
     }
 
+    public function create()
+    {
+        $skills = Skill::all();
+        return view('admin.realisations.create', compact('skills'));
+    }
+
+    public function store(Request $request)
+    {
+        $credentials = $request->validate([
+            'title' => 'required',
+            'subtitle' => 'required',
+            'content' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $fileName = sha1(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
+            $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
+        }
+
+        Realisation::create([
+            'title' => $credentials['title'],
+            'subtitle' => $credentials['subtitle'],
+            'content' => $credentials['content'],
+            'image' => $imagePath ?? null,
+        ]);
+
+        return redirect()->route('admin.realisations.index');
+    }
+
     public function edit(Realisation $realisation)
     {
         $skills = Skill::all();
