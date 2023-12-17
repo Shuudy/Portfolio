@@ -37,7 +37,7 @@
                     <label for="content">Contenu</label>
                     <textarea class="form-control" name="content" id="content"></textarea>
                 </div>
-                <button class="btn">Créer</button>
+                <button class="btn">Créer la réalisation</button>
             </form>
         </div>
     </div>

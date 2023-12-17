@@ -18,4 +18,16 @@
         box-shadow: 0 0 4px rgba(24, 36, 51, .04);
         padding: 1rem 1.5rem;
     }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a.btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
 }

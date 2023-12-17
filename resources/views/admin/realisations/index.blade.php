@@ -5,7 +5,10 @@
 
 <div class="page">
     <div class="page-content">
-        <h2 class="page-title">Réalisations</h2>
+        <div class="page-header">
+            <h2 class="page-title">Réalisations</h2>
+            <a href="{{ route('admin.realisations.create') }}" class="btn"><i class="ti ti-plus"></i>Créer une réalisation</a>
+        </div>
         <div class="page-block">
             @livewire('pagination-realisations-table')
         </div>
