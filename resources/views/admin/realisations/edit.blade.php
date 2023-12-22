@@ -43,10 +43,45 @@
     </div>
 </div>
 
-<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
-    CKEDITOR.replace('content', {
-        height: '300px'
+    function MinHeightPlugin(editor) {
+  this.editor = editor;
+}
+
+MinHeightPlugin.prototype.init = function() {
+this.editor.ui.view.editable.extendTemplate({
+    attributes: {
+      style: {
+        minHeight: '300px'
+      }
+    }
+  });
+};
+
+ClassicEditor.builtinPlugins.push(MinHeightPlugin);
+ClassicEditor
+    .create(document.querySelector('#content'), {
+        fontFamily: {
+            options: [
+                'default',
+                'Ubuntu, Arial, sans-serif',
+                'Ubuntu Mono, Courier New, Courier, monospace'
+            ]
+        },
+        toolbar: {
+            items: [
+                'undo', 'redo',
+                '|', 'heading',
+                '|', 'fontfamily', 'fontColor',
+                '|', 'bold', 'italic',
+                '|', 'link', 'uploadImage', 'blockQuote', 'code',
+                '|', 'bulletedList', 'numberedList', 'outdent', 'indent'
+            ]
+        }
+    })    
+    .catch(error => {
+        console.error( error );
     });
 </script>
 @endsection
