@@ -46,42 +46,42 @@
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <script>
     function MinHeightPlugin(editor) {
-  this.editor = editor;
-}
-
-MinHeightPlugin.prototype.init = function() {
-this.editor.ui.view.editable.extendTemplate({
-    attributes: {
-      style: {
-        minHeight: '300px'
-      }
+        this.editor = editor;
     }
-  });
-};
 
-ClassicEditor.builtinPlugins.push(MinHeightPlugin);
-ClassicEditor
-    .create(document.querySelector('#content'), {
-        fontFamily: {
-            options: [
-                'default',
-                'Ubuntu, Arial, sans-serif',
-                'Ubuntu Mono, Courier New, Courier, monospace'
-            ]
-        },
-        toolbar: {
-            items: [
-                'undo', 'redo',
-                '|', 'heading',
-                '|', 'fontfamily', 'fontColor',
-                '|', 'bold', 'italic',
-                '|', 'link', 'uploadImage', 'blockQuote', 'code',
-                '|', 'bulletedList', 'numberedList', 'outdent', 'indent'
-            ]
-        }
-    })    
-    .catch(error => {
-        console.error( error );
-    });
+    MinHeightPlugin.prototype.init = function() {
+        this.editor.ui.view.editable.extendTemplate({
+            attributes: {
+                style: {
+                    minHeight: '300px'
+                }
+            }
+        });
+    };
+
+    ClassicEditor.builtinPlugins.push(MinHeightPlugin);
+    ClassicEditor
+        .create(document.querySelector('#content'), {
+            fontFamily: {
+                options: [
+                    'default',
+                    'Ubuntu, Arial, sans-serif',
+                    'Ubuntu Mono, Courier New, Courier, monospace'
+                ]
+            },
+            toolbar: {
+                items: [
+                    'undo', 'redo',
+                    '|', 'heading',
+                    '|', 'fontfamily', 'fontColor',
+                    '|', 'bold', 'italic',
+                    '|', 'link', 'uploadImage', 'blockQuote', 'code',
+                    '|', 'bulletedList', 'numberedList', 'outdent', 'indent', 'fulLScreen'
+                ]
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
 </script>
 @endsection
