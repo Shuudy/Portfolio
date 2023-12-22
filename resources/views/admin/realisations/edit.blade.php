@@ -21,8 +21,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" name="image" id="image" accept="image/png, image/gif, image/jpeg" class="form-control">
+                    <label for="imageInput">Image</label>
+                    <div id="imageContainer" style="position: relative; display: inline-block;">
+                        <input type="file" name="image" id="imageInput" accept="image/png, image/gif, image/jpeg" class="form-control" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                        <img id="imagePreview" src="{{ $realisation->image ? asset('storage/' . $realisation->image) : asset('images/admin_imagepreview.png') }}" alt="Image Preview" class="img-thumbnail form-control" style="max-width: 150px; max-height: 150px;">
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -42,4 +45,29 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('imagePreview').addEventListener('click', function() {
+        document.getElementById('imageInput').click();
+    });
+    showImagePreview();
+
+    document.getElementById('imageInput').addEventListener('change', function() {
+        showImagePreview();
+    });
+
+    function showImagePreview() {
+        var imageInput = document.getElementById('imageInput');
+        var imagePreview = document.getElementById('imagePreview');
+
+        if (imageInput.files && imageInput.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                imagePreview.src = e.target.result;
+            }
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+    }
+</script>
 @endsection
