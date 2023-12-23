@@ -67,6 +67,19 @@ $navbar-transition-duration: .4s;
         }
     }
 
+    &-menu {
+        display: none;
+        height: $navbar-height;
+        @media screen and (max-width: 1024px) {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            i {
+                font-size: 28px;
+            }
+        }
+    }
+
     &.scrolled {
         box-shadow: 0 0 12px rgba(0, 0, 0, .09);
         height: $navbar-scrolled-height;
