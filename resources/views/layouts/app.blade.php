@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     @vite(['resources/js/app.js'])
 </head>
-<body>
+<body {{ isset($background) && $background ? 'class=background' : '' }}>
     @yield('body')
 </body>
 </html>

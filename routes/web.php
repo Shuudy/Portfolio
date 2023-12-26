@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\RealisationsController;
 
 Route::view('/', 'index')->name('index');
 Route::view('/realisation', 'realisation');
+Route::view('/realisations', 'realisations');
 
 Route::prefix('admin')->name('admin.')->group(function () {
 

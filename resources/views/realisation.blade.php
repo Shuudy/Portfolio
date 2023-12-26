@@ -3,7 +3,7 @@
 @section('body')
 <x-navbar/>
 
-<div class="title-bar" style="background-image: linear-gradient(160deg, rgba(0,0,0,0) 0%, #000 100%), url(https://4kwallpapers.com/images/wallpapers/asian-woman-1920x1080-11458.jpg);">
+<div class="title-bar" style="background-image: linear-gradient(160deg, rgba(0,0,0,0) 0%, #000 100%), url(https://image.winudf.com/v2/image/dWFsYWJzLnNod2FsbHBhcGVyc19zY3JlZW5fN18xNTA2Mjk0NjgzXzAzOA/screen-7.jpg?fakeurl=1&type=.jpg);">
     <div class="title-bar-content">
         <div class="title-bar-subtitle">Publié dans L'Equipe</div>
         <h1 class="title-bar-title">LAPORTE, DANS LE MEILLEUR DES MONDES</h1>

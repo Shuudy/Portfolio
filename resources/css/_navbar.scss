@@ -88,4 +88,8 @@ $navbar-transition-duration: .4s;
             height: $navbar-scrolled-height;
         }
     }
+
+    &-skip {
+        height: $navbar-height;
+    }
 }
