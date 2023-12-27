@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Skill;
 use App\Models\SubSkill;
 use App\Models\Realisation;
 use Illuminate\Support\Str;

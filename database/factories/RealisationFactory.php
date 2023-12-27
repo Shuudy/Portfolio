@@ -17,12 +17,13 @@ class RealisationFactory extends Factory
      */
     public function definition(): array
     {
-        $title = ucfirst(fake()->word) . ', ' . ucfirst(fake()->word) . ', ' . ucfirst(fake()->word);
+        $title = ucfirst(fake()->word) . ', ' . fake()->word . ', ' . fake()->word;
+        $subtitles = ['HTML, CSS, JS', 'Laravel, SASS', 'SASS', 'Debian 11', 'VirtualBox', 'Windows Server 2022'];
         return [
             'title' => $title,
-            'subtitle' => 'HTML, CSS, JS',
+            'subtitle' => fake()->randomElement($subtitles),
             'slug' => Str::slug($title),
-            'content' => fake()->sentence
+            'content' => fake()->paragraphs(3, true)
         ];
     }
 }
