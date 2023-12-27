@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Skill;
+use App\Models\SubSkill;
 use App\Models\Realisation;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -17,8 +19,8 @@ class RealisationsController extends Controller
 
     public function create()
     {
-        $skills = Skill::all();
-        return view('admin.realisations.create', compact('skills'));
+        $subskills = SubSkill::all();
+        return view('admin.realisations.create', compact('subskills'));
     }
 
     public function store(Request $request)
@@ -27,7 +29,7 @@ class RealisationsController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         if ($request->hasFile('image')) {
@@ -38,6 +40,7 @@ class RealisationsController extends Controller
         Realisation::create([
             'title' => $credentials['title'],
             'subtitle' => $credentials['subtitle'],
+            'slug' => Str::slug($credentials['title']),
             'content' => $credentials['content'],
             'image' => $imagePath ?? null,
         ]);
@@ -47,8 +50,8 @@ class RealisationsController extends Controller
 
     public function edit(Realisation $realisation)
     {
-        $skills = Skill::all();
-        return view('admin.realisations.edit', compact('realisation', 'skills'));
+        $subskills = SubSkill::all();
+        return view('admin.realisations.edit', compact('realisation', 'subskills'));
     }
 
     public function update(Request $request, Realisation $realisation)
@@ -64,6 +67,12 @@ class RealisationsController extends Controller
             Storage::disk('public')->delete($realisation->image);
         }
         $realisation->update($request->except('image'));
+
+        // Slug change
+        if ($request->has('title') && $request->title !== $realisation->title) {
+            $realisation->slug = Str::slug($request->title);
+        }       
+        $realisation->save();
 
         if ($request->hasFile('image')) {
             $fileName = sha1(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();

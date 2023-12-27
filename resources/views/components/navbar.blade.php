@@ -6,7 +6,7 @@
         <div class="navbar-right">
             <div class="navbar-menu"><i class="ti ti-menu-2"></i></div>
             <ul>
-                <li><a href=""><span>Qui suis-je</span></a></li>
+                <li><a href=""><span>Qui suis-je ?</span></a></li>
                 <li><a href=""><span>Mes réalisations</span></a></li>
                 <li><a href=""><span>Contact</span></a></li>
             </ul>

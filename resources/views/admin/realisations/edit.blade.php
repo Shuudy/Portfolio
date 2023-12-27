@@ -5,7 +5,7 @@
 
 <div class="page">
     <div class="page-content">
-        <h2 class="page-title">Réalisations</h2>
+        <h2 class="page-title">Modifier une réalisation</h2>
         <div class="page-block">
             <form action="{{ route('admin.realisations.update', $realisation->id) }}" method="post" enctype="multipart/form-data">
                 @method('PATCH')
@@ -23,16 +23,16 @@
                 <div class="form-group">
                     <label for="imageInput">Image</label>
                     <div id="imageContainer" style="position: relative; display: inline-block;">
-                        <input type="file" name="image" id="imageInput" accept="image/png, image/gif, image/jpeg" class="form-control" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+                        <input type="file" name="image" id="imageInput" accept="image/png, image/jpeg" class="form-control" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
                         <img id="imagePreview" src="{{ $realisation->image ? asset('storage/' . $realisation->image) : asset('images/admin_imagepreview.png') }}" alt="Image Preview" class="img-thumbnail form-control" style="max-width: 150px; max-height: 150px;">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="skills">Compétences</label>
-                    <select name="skills[]" id="skills" multiple>
-                        @foreach ($skills as $skill)
-                        <option value="{{ $skill->id }}">{{ $skill->name }}</option>
+                    <label for="subskills">Compétences</label>
+                    <select name="subskills[]" id="subskills" multiple>
+                        @foreach ($subskills as $subskill)
+                        <option value="{{ $subskill->id }}">{{ $subskill->name }}</option>
                         @endforeach
                     </select>
                 </div>

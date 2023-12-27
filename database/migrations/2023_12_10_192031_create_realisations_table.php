@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('realisations', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('subtitle');
+            $table->string('subtitle');            
             $table->text('content');
+            $table->string('slug', 255)->unique();
             $table->string('image')->nullable();
             $table->timestamps();
         });

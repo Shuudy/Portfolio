@@ -17,7 +17,7 @@
         <div class="navbar-left">
             <ul class="navbar-link">
                 <li class="{{ Route::is('admin.index') ? 'active' : '' }}"><a href="{{ route('admin.index') }}"><i class="ti ti-home"></i>Home</a></li>
-                <li class="{{ Request::is('admin/realisations*') ? 'active' : '' }}"><a href="{{ route('admin.realisations.index') }}"><i class="ti ti-home"></i>Home</a></li>
+                <li class="{{ Request::is('admin/realisations*') ? 'active' : '' }}"><a href="{{ route('admin.realisations.index') }}"><i class="ti ti-brand-supabase"></i>Realisations</a></li>
                 <li><a href=""><i class="ti ti-home"></i>Home</a></li>
             </ul>
         </div>        

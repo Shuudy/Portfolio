@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,9 +17,11 @@ class RealisationFactory extends Factory
      */
     public function definition(): array
     {
+        $title = ucfirst(fake()->word) . ', ' . ucfirst(fake()->word) . ', ' . ucfirst(fake()->word);
         return [
-            'title' => ucfirst(fake()->word) . ', ' . ucfirst(fake()->word) . ', ' . ucfirst(fake()->word),
+            'title' => $title,
             'subtitle' => 'HTML, CSS, JS',
+            'slug' => Str::slug($title),
             'content' => fake()->sentence
         ];
     }
