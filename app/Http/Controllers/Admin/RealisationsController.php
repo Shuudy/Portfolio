@@ -50,7 +50,9 @@ class RealisationsController extends Controller
     public function edit(Realisation $realisation)
     {
         $subskills = SubSkill::all();
-        return view('admin.realisations.edit', compact('realisation', 'subskills'));
+
+        $selectedSubskills = $realisation->subskills->pluck('id')->toArray();
+        return view('admin.realisations.edit', compact('realisation', 'subskills', 'selectedSubskills'));
     }
 
     public function update(Request $request, Realisation $realisation)
@@ -59,8 +61,15 @@ class RealisationsController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'subskills' => 'array',
         ]);    
+
+        $realisation->subskills()->detach();
+
+        if ($request->has('subskills')) {
+            $realisation->subskills()->attach($request->input('subskills'));
+        }
 
         if ($realisation->image) {
             Storage::disk('public')->delete($realisation->image);

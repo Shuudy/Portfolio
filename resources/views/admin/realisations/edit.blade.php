@@ -32,7 +32,7 @@
                     <label for="subskills">Compétences</label>
                     <select name="subskills[]" id="subskills" multiple>
                         @foreach ($subskills as $subskill)
-                        <option value="{{ $subskill->id }}">{{ $subskill->name }}</option>
+                        <option value="{{ $subskill->id }}" {{ in_array($subskill->id, $selectedSubskills) ? 'selected' : '' }}>{{ $subskill->name }}</option>
                         @endforeach
                     </select>
                 </div>
