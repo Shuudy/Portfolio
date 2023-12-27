@@ -44,6 +44,8 @@ class RealisationsController extends Controller
             'image' => $imagePath ?? null,
         ]);
 
+        notify()->success('Réalisation créer avec succès.', 'Création');
+
         return redirect()->route('admin.realisations.index');
     }
 
@@ -90,6 +92,8 @@ class RealisationsController extends Controller
             $realisation->image = $imagePath;
             $realisation->save();
         }
+       
+        notify()->success('Réalisation modifiée avec succès.', 'Modification');
 
         return redirect()->route('admin.realisations.index');
     }

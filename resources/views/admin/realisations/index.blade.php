@@ -1,5 +1,10 @@
 @extends('layouts.app-admin')
 
+@php
+    $includeNotify = true;
+    $includeLivewire = true;
+@endphp
+
 @section('body')
 <x-admin.navbar />
 

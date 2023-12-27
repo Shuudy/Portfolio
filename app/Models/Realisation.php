@@ -9,7 +9,7 @@ class Realisation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'subtitle', 'content', 'image'];
+    protected $fillable = ['title', 'subtitle', 'content', 'image', 'slug'];
 
     public function subskills()
     {

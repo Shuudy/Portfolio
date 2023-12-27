@@ -159,7 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        McKenziearts\Notify\LaravelNotifyServiceProvider::class,
         /*
          * Application Service Providers...
          */
