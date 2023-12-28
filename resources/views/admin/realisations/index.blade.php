@@ -1,8 +1,7 @@
 @extends('layouts.app-admin')
 
 @php
-    $includeNotify = true;
-    $includeLivewire = true;
+    $useButterUp = true;
 @endphp
 
 @section('body')
@@ -19,4 +18,18 @@
         </div>
     </div>
 </div>
+
+@if(session('success'))
+    @section('js')
+    <script>
+        butterup.toast({
+            title: 'Succès',
+            message: '{{ session('success') }}',
+            type: 'success',
+            dismissable: true,
+            icon: true,
+        });
+    </script>
+    @endsection
+@endif
 @endsection
