@@ -27,8 +27,9 @@ class RealisationsController extends Controller
         $credentials = $request->validate([
             'title' => 'required',
             'subtitle' => 'required',
-            'content' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'content' => 'required|string|min:32',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'subskills' => 'array'
         ]);
 
         if ($request->hasFile('image')) {
@@ -36,13 +37,17 @@ class RealisationsController extends Controller
             $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
         }
 
-        Realisation::create([
+        $realisation = Realisation::create([
             'title' => $credentials['title'],
             'subtitle' => $credentials['subtitle'],
             'slug' => Str::slug($credentials['title']),
             'content' => $credentials['content'],
             'image' => $imagePath ?? null,
         ]);
+
+        if ($request->has('subskills')) {
+            $realisation->subskills()->attach($request->input('subskills'));
+        }
 
         return redirect()->route('admin.realisations.index')->with('success', 'Réalisation créée avec succès.');
     }
@@ -60,7 +65,7 @@ class RealisationsController extends Controller
         $request->validate([
             'title' => 'required',
             'subtitle' => 'required',
-            'content' => 'required',
+            'content' => 'required|string|min:32',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'subskills' => 'array',
         ]);    
@@ -70,10 +75,7 @@ class RealisationsController extends Controller
         if ($request->has('subskills')) {
             $realisation->subskills()->attach($request->input('subskills'));
         }
-
-        if ($realisation->image) {
-            Storage::disk('public')->delete($realisation->image);
-        }
+       
         $realisation->update($request->except('image'));
 
         // Slug change
@@ -83,6 +85,10 @@ class RealisationsController extends Controller
         $realisation->save();
 
         if ($request->hasFile('image')) {
+            // If a realization already has an image
+            if ($realisation->image) {
+                Storage::disk('public')->delete($realisation->image);
+            }
             $fileName = sha1(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
 
             $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
