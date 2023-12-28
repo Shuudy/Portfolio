@@ -12,12 +12,18 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" placeholder="Titre de la réalisation" class="form-control">
+                    <label for="title">Titre</label>
+                    <input type="text" name="title" id="title" placeholder="Titre de la réalisation" class="form-control @error('title') is-invalid @enderror">
+                    @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
-                    <input type="text" name="subtitle" id="subtitle" placeholder="Sous-titre de la réalisation" class="form-control">
+                    <input type="text" name="subtitle" id="subtitle" placeholder="Sous-titre de la réalisation" class="form-control @error('subtitle') is-invalid @enderror">
+                    @error('subtitle')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -39,6 +45,9 @@
                 <div class="form-group">
                     <label for="content">Contenu</label>
                     <textarea class="form-control" name="content" id="content"></textarea>
+                    @error('content')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button class="btn">Créer la réalisation</button>
             </form>
