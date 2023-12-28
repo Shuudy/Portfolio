@@ -23,6 +23,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+
+            transition: -webkit-filter .4s ease;
+        }
+        
+        &:hover img{
+            -webkit-filter: brightness(70%);
         }
     }
 
