@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\RealisationsController;
+use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,14 @@ use App\Http\Controllers\Admin\RealisationsController;
 
 Route::view('/', 'index')->name('index');
 Route::view('/realisation', 'realisation');
-Route::view('/realisations', 'realisations');
+
+Route::prefix('realisations')->name('realisations.')->controller(PublicRealisationsController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/{slug}-{id}', 'show')->where([
+        'id' => '[0-9]+',
+        'slug' => '[a-z0-9\-]+'
+    ])->name('show');
+});
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
