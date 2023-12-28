@@ -10,6 +10,8 @@ $navbar-transition-duration: .4s;
     height: $navbar-height;
     background-color: red;
 
+    z-index: 100;
+
     transition: height $navbar-transition-duration ease;
     &-content {
         @extend %container;
