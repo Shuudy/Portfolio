@@ -13,16 +13,16 @@
 
                 <div class="form-group">
                     <label for="title">Titre</label>
-                    <input type="text" name="title" id="title" placeholder="Titre de la réalisation" class="form-control @error('title') is-invalid @enderror">
+                    <input type="text" name="title" id="title" placeholder="Titre de la réalisation" class="form-control @error('title') is-invalid @enderror" required>
                     @error('title')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
-                    <input type="text" name="subtitle" id="subtitle" placeholder="Sous-titre de la réalisation" class="form-control @error('subtitle') is-invalid @enderror">
+                    <input type="text" name="subtitle" id="subtitle" placeholder="Sous-titre de la réalisation" class="form-control @error('subtitle') is-invalid @enderror" required>
                     @error('subtitle')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
@@ -37,8 +37,12 @@
                 <div class="form-group">
                     <label for="subskills">Compétences</label>
                     <select name="subskills[]" id="subskills" multiple>
-                        @foreach ($subskills as $subskill)
-                        <option value="{{ $subskill->id }}">{{ $subskill->name }}</option>
+                        @foreach($skills as $skill)
+                        <optgroup label="{{ $skill->name }}">
+                            @foreach($skill->subskills as $subskill)
+                            <option value="{{ $subskill->id }}">{{ $subskill->name }}</option>
+                            @endforeach
+                        </optgroup>
                         @endforeach
                     </select>
                 </div>
@@ -46,7 +50,7 @@
                     <label for="content">Contenu</label>
                     <textarea class="form-control" name="content" id="content"></textarea>
                     @error('content')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                    <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <button class="btn">Créer la réalisation</button>

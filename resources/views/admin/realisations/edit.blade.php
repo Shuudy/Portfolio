@@ -13,14 +13,14 @@
 
                 <div class="form-group">
                     <label for="title">Titre</label>
-                    <input type="text" name="title" id="title" value="{{ $realisation->title }}" class="form-control @error('title') is-invalid @enderror">
+                    <input type="text" name="title" id="title" value="{{ $realisation->title }}" class="form-control @error('title') is-invalid @enderror" required>
                     @error('title')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="subtitle">Sous-titre</label>
-                    <input type="text" name="subtitle" id="subtitle" value="{{ $realisation->subtitle }}" class="form-control @error('subtitle') is-invalid @enderror">
+                    <input type="text" name="subtitle" id="subtitle" value="{{ $realisation->subtitle }}" class="form-control @error('subtitle') is-invalid @enderror" required>
                     @error('subtitle')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -37,8 +37,12 @@
                 <div class="form-group">
                     <label for="subskills">Compétences</label>
                     <select name="subskills[]" id="subskills" multiple>
-                        @foreach ($subskills as $subskill)
-                        <option value="{{ $subskill->id }}" {{ in_array($subskill->id, $selectedSubskills) ? 'selected' : '' }}>{{ $subskill->name }}</option>
+                        @foreach($skills as $skill)
+                        <optgroup label="{{ $skill->name }}">
+                            @foreach($skill->subskills as $subskill)
+                            <option value="{{ $subskill->id }}" {{ in_array($subskill->id, $selectedSubskills) ? 'selected' : '' }}>{{ $subskill->name }}</option>
+                            @endforeach
+                        </optgroup>
                         @endforeach
                     </select>
                 </div>

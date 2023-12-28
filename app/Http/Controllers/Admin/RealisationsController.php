@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Skill;
 use App\Models\SubSkill;
 use App\Models\Realisation;
 use Illuminate\Support\Str;
@@ -18,8 +19,8 @@ class RealisationsController extends Controller
 
     public function create()
     {
-        $subskills = SubSkill::all();
-        return view('admin.realisations.create', compact('subskills'));
+        $skills = Skill::all();
+        return view('admin.realisations.create', compact('skills'));
     }
 
     public function store(Request $request)
@@ -54,10 +55,11 @@ class RealisationsController extends Controller
 
     public function edit(Realisation $realisation)
     {
+        $skills = Skill::all();
         $subskills = SubSkill::all();
 
         $selectedSubskills = $realisation->subskills->pluck('id')->toArray();
-        return view('admin.realisations.edit', compact('realisation', 'subskills', 'selectedSubskills'));
+        return view('admin.realisations.edit', compact('realisation', 'skills', 'subskills', 'selectedSubskills'));
     }
 
     public function update(Request $request, Realisation $realisation)
