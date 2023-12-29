@@ -4,7 +4,7 @@
         <div class="navbar-right">
             <div class="navbar-infos">
                 <div class="navbar-infos-image">
-                    <img src="https://i.ibb.co/ns9Lmtk/410243901-329741656616289-2755236118860428269-n.jpg" alt="">
+                    <img src="https://ui-avatars.com/api/?name={{ auth()->user()->username }}&background=random" alt="">
                 </div>
                 <span>{{ auth()->user()->username }}</span>
                 <a href="{{ route('admin.logout') }}"><i class="ti ti-logout"></i></a>
