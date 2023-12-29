@@ -1,5 +1,7 @@
 @extends('layouts.app-admin')
 
+@section('title', 'Realisations')
+
 @php
     $useButterUp = true;
 @endphp

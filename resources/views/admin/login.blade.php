@@ -1,5 +1,7 @@
 @extends('layouts.app-admin')
 
+@section('title', 'Login')
+
 @section('body')
 
 <div class="login-page">

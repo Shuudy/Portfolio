@@ -26,6 +26,8 @@ Route::prefix('realisations')->name('realisations.')->controller(PublicRealisati
         'id' => '[0-9]+',
         'slug' => '[a-z0-9\-]+'
     ])->name('show');
+
+    Route::view('/test', 'realisation');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {

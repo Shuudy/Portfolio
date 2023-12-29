@@ -1,5 +1,7 @@
 @extends('layouts.app-admin')
 
+@section('title', 'Home')
+
 @section('body')
 <x-admin.navbar />
 <div class="page">

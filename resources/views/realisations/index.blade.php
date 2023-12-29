@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Mes réalisations')
+
 @php
     $background = true;
 @endphp
