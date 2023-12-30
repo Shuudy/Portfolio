@@ -26,7 +26,8 @@
                 <div class="card">
                     <div class="card-image"><a href="{{ route('realisations.show', ['id' => $lastRealisation->id, 'slug' => $lastRealisation->slug]) }}"><img src="{{ asset('storage/' . $lastRealisation->image) }}" alt="Last realisation image" loading="lazy"></a></div>
                     <div class="card-content">
-                        <h2 class="card-title"><a href="{{ route('realisations.show', ['id' => $lastRealisation->id, 'slug' => $lastRealisation->slug]) }}">{{ $lastRealisation->title }}</a></h2>
+                        <h2 class="card-title card-title-entry"><a href="{{ route('realisations.show', ['id' => $lastRealisation->id, 'slug' => $lastRealisation->slug]) }}">{{ $lastRealisation->title }}</a></h2>
+                        <div class="card-subtitle">{{ $lastRealisation->subtitle }}</div>
                     </div>
                 </div>
             @endforeach
