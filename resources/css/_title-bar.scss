@@ -2,6 +2,7 @@ $title-bar-height-default: 485px; // old 485px
 $title-bar-height: $title-bar-height-default + $navbar-height;
 
 .title-bar {
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
     height: $title-bar-height-default + $navbar-height;

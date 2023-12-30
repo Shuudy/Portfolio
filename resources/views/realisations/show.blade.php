@@ -5,7 +5,7 @@
 @section('body')
 <x-navbar/>
 
-<div class="title-bar" style="background-image: linear-gradient(160deg, rgba(0,0,0,0) 0%, #000 100%), url({{ asset('storage/' . $realisation->image) }});">
+<div class="title-bar" style="background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url({{ asset('storage/' . $realisation->image) }});">
     <div class="title-bar-content">
         <div class="title-bar-subtitle">{{ $realisation->subtitle }}</div>
         <h1 class="title-bar-title">{{ $realisation->title }}</h1>
