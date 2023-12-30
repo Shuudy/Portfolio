@@ -81,10 +81,11 @@ class RealisationsController extends Controller
         $realisation->update($request->except('image'));
 
         // Slug change
-        if ($request->has('title') && $request->title !== $realisation->title) {
-            $realisation->slug = Str::slug($request->title);
-        }       
-        $realisation->save();
+        $slug = Str::slug($request->title);
+        if ($slug !== $realisation->slug) {
+            $realisation->slug = $slug;
+            $realisation->save();
+        }        
 
         if ($request->hasFile('image')) {
             // If a realization already has an image
