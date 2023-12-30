@@ -1,15 +1,14 @@
 .realisation {
-
     background-color: #fff;
     width: 370px;
-    align-self: flex-start;
     
     &-list {
         margin-top: 2em;
         margin-bottom: 100px;
         display: flex;
-        gap: 1.9em;
+        justify-content: space-around;
         flex-wrap: wrap;
+        gap: 1.9em;
 
         @extend %container;
     }

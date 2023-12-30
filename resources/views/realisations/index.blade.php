@@ -34,13 +34,10 @@
         <div class="realisation-content">
             <div class="realisation-subtitle">{{ $realisation->subtitle }}</div>
             <h2 class="realisation-title"><a href="{{ route('realisations.show', ['slug' => $realisation->slug, 'id' => $realisation->id]) }}">{{ $realisation->title }}</a></h2>
-            <div class="realisation-desc">
-                <p>{{ Str::limit(strip_tags($realisation->content), 200) }}</p>
-            </div>
+            <div class="realisation-desc"><p>{{ Str::limit(strip_tags($realisation->content), 200) }}</p></div>
         </div>
     </div>
-    @endforeach
-    
+    @endforeach    
 </div>
 
 <x-footer/>
