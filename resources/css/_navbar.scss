@@ -71,7 +71,7 @@ $navbar-transition-duration: .4s;
 
     &-menu {
         display: none;
-        height: $navbar-height;
+        height: $navbar-height - 20px;
         @media screen and (max-width: 1024px) {
             display: flex;
             align-items: center;
