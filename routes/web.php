@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\RealisationsController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 
 /*
@@ -16,8 +17,7 @@ use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 |
 */
 
-
-Route::view('/', 'index')->name('index');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::view('/realisation', 'realisation');
 
 Route::prefix('realisations')->name('realisations.')->controller(PublicRealisationsController::class)->group(function () {
