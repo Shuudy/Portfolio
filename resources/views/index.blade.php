@@ -4,7 +4,7 @@
 <x-navbar/>
 <x-hero/>
 
-<section class="section section-about">
+<section class="section section-about" id="about-me">
     <div class="section-content">
         <div class="section-about-image">
             <img src="https://team-break.fr/wp-content/uploads/2023/07/jeux-societe-horreur-1024x1024.png" alt="Image about me">
@@ -43,7 +43,7 @@
             @endforeach
         </div>
         <div class="section-btn">
-            <a href="" class="btn btn-section">VOIR TOUTES MES PRODUCTIONS</a>
+            <a href="{{ route('realisations.index') }}" class="btn btn-section">VOIR TOUTES MES PRODUCTIONS</a>
         </div>        
     </div>
 </section>
