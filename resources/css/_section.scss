@@ -25,6 +25,11 @@ section.section {
             line-height: 1.8em;
             letter-spacing: 2px;
             color: rgb(50,50,50);
+
+            @media screen and (max-width: 800px) {
+                font-size: 33px;
+                line-height: 1.3em;
+            }
         }
     }
 
