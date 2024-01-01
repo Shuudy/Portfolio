@@ -1,10 +1,20 @@
 
 .text {
-    padding-top: 90px;
+    padding: 90px 60px 0 60px;
     &-content {
         @extend %container-text;
         line-height: 1.7;
         font-size: 17px;
         text-align: left;
+    }
+
+    @media screen and (max-width: 600px) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    @media screen and (max-width: 400px) {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
