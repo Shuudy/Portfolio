@@ -43,6 +43,11 @@
 
     &-subtitle {
         color: #999;
+
+        &.home {
+            color: #545454;
+            margin: 0px 0px 13px 0px;
+        }
     }
 
     &-text {
