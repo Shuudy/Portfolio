@@ -59,10 +59,18 @@ section.section {
             }
         }
 
+        @media screen and (max-width: 600px) {
+            padding: 40px;
+        }
+
         @media screen and (max-width: 570px) {
             .section-content {
                 padding: 0 10px;
-            }           
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            padding: 20px;
         }
     }
 
