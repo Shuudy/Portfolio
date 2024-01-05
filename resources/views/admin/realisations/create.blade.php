@@ -64,7 +64,8 @@
 <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('content', {
-        height: '300px'
+        height: '300px',
+        entities_latin: false
     });
 </script>
 <script>
