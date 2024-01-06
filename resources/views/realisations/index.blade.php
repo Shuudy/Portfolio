@@ -9,6 +9,7 @@
 @section('body')
 <x-navbar/>
 <div class="navbar-skip"></div>
+<x-sidebar/>
 
 <div class="realisation-list">
     @foreach($realisations as $realisation)

@@ -2,6 +2,7 @@
 
 @section('body')
 <x-navbar/>
+<x-sidebar/>
 <x-hero/>
 
 <section class="section section-about" id="about-me">

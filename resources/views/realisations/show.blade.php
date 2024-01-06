@@ -4,6 +4,7 @@
 
 @section('body')
 <x-navbar/>
+<x-sidebar/>
 
 <div class="title-bar" style="background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url({{ asset('storage/' . $realisation->image) }});">
     <div class="title-bar-content">
