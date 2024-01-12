@@ -1,13 +1,16 @@
 import '../css/app.scss';
 
 const navbar = document.querySelector('.navbar');
+const scrollTopButton = document.querySelector('.scroll-button');
 
 function handleScroll() {
     const scrollY = window.scrollY;
     if (scrollY > 100) {
         navbar.classList.add('scrolled');
+        scrollTopButton?.classList.add('show');
     } else {
         navbar.classList.remove('scrolled');
+        scrollTopButton?.classList.remove('show');
     }
 }
 

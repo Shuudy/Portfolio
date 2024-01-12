@@ -26,5 +26,6 @@
     @endforeach
 </div>
 
+<x-scroll-button/>
 <x-footer/>
 @endsection

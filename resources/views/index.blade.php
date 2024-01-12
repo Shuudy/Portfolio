@@ -49,5 +49,6 @@
     </div>
 </section>
 
+<x-scroll-button/>
 <x-footer/>
 @endsection

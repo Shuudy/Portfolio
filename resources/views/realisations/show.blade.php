@@ -20,7 +20,7 @@
 <section class="section other">
     <div class="section-content">
         <div class="section-title">
-            <h2>Autres articles&nbsp;:</h2>
+            <h2>Autres réalisations&nbsp;:</h2>
         </div>
         <div class="card-list">
             @foreach ($lastRealisations as $lastRealisation)
@@ -36,5 +36,6 @@
     </div>
 </section>
 
+<x-scroll-button/>
 <x-footer/>
 @endsection
