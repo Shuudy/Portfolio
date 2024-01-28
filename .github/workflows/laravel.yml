@@ -51,6 +51,12 @@ jobs:
       run: |
         echo "DB_CONNECTION=sqlite" >> .env
         echo "DB_DATABASE=database/database.sqlite" >> .env
+
+    - name: Display PHP version
+      run: php --version
+
+    - name: Display environment variables
+      run: printenv
         
     - name: Run Migrations
       run: php artisan migrate --database=sqlite --seed
