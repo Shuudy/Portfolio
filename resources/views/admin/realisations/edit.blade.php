@@ -52,9 +52,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="content">Contenu</label>
+                    <label for="quill_html">Contenu</label>
                     <div id="quill"></div>
-                    <input type="hidden" id="quill_html" name="content"></input>
+                    <input type="hidden" id="quill_html" name="content" value="{{ $realisation->content }}"></input>
                     @error('content')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
