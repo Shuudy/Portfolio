@@ -34,7 +34,7 @@ class RealisationsController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $fileName = sha1(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
+            $fileName = md5(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
             $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
         }
 
@@ -92,7 +92,7 @@ class RealisationsController extends Controller
             if ($realisation->image) {
                 Storage::disk('public')->delete($realisation->image);
             }
-            $fileName = sha1(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
+            $fileName = md5(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
 
             $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
 

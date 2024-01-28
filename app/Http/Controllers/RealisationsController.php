@@ -15,7 +15,7 @@ class RealisationsController extends Controller
     public function show($slug, $id)
     {
         $realisation = Realisation::where('slug', $slug)->findOrFail($id);
-        $lastRealisations = Realisation::where('id', '!=', $id)->latest()->take(3)->get();
+        $lastRealisations = Realisation::where('id', '!=', $id)->latest()->take(3)->select('id', 'title', 'subtitle', 'slug', 'image')->get();
 
         return view('realisations.show', compact('realisation', 'lastRealisations'));
     }
