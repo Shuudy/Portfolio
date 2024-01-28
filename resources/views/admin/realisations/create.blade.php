@@ -49,8 +49,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="content">Contenu</label>
-                    <textarea class="form-control" name="content" id="content"></textarea>
+                    <label for="quill_html">Contenu</label>
+                    <div id="quill"></div>
+                    <input type="hidden" id="quill_html" name="content"></input>
                     @error('content')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -61,14 +62,38 @@
     </div>
 </div>
 
-<script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<style>
+#quill {
+    height: 300px;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
 <script>
-    CKEDITOR.replace('content', {
-        height: '300px',
-        entities_latin: false
+    const quill = new Quill('#quill', {
+    theme: 'snow',
+    modules: {
+        syntax: true,
+        toolbar: [
+            [{ 'font': [] }, { 'size': [] }],
+            ['bold', 'italic', 'underline', 'strike'],
+            [{ 'color': [] }, { 'background': [] }],
+            ['blockquote', 'code-block'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            ['direction', { 'align': [] }],
+            ['link', 'image', 'video'],
+            ['clean']
+            ]
+        }
     });
-</script>
-<script>
+
+    quill.on('text-change', function(delta, oldDelta, source) {
+        document.getElementById("quill_html").value = quill.root.innerHTML;
+    });
     document.getElementById('imagePreview').addEventListener('click', function() {
         document.getElementById('imageInput').click();
     });
