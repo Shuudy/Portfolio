@@ -34,7 +34,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::controller(AuthController::class)->group(function () {
         Route::get('/login', 'index')->name('login');
-        Route::post('/login', 'login')->name('login-post')->middleware('throttle:3,1');
+        Route::post('/login', 'login')->middleware('throttle:3,1');
 
         Route::get('/logout', 'logout')->name('logout');
     });
@@ -46,7 +46,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', 'index')->name('index');
 
             Route::get('/create', 'create')->name('create');
-            Route::put('/create', 'store')->name('store');
+            Route::put('/create', 'store');
 
             Route::get('/edit/{realisation}', 'edit')->name('edit');
             Route::patch('/update/{realisation}', 'update')->name('update');
