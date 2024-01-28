@@ -7,6 +7,7 @@ use App\Models\SubSkill;
 use App\Models\Realisation;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Intervention\Image\Laravel\Facades\Image;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,8 +35,12 @@ class RealisationsController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            $fileName = md5(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
-            $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
+            $originalImage = $request->file('image');
+        
+            $fileName = md5(time() . $originalImage->getClientOriginalName());
+            Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
+
+            $imagePath = "uploads/{$fileName}.webp";
         }
 
         $realisation = Realisation::create([
@@ -92,11 +97,12 @@ class RealisationsController extends Controller
             if ($realisation->image) {
                 Storage::disk('public')->delete($realisation->image);
             }
-            $fileName = md5(time() . $request->file('image')->getClientOriginalName()) . '.' . $request->file('image')->getClientOriginalExtension();
+            $originalImage = $request->file('image');
+         
+            $fileName = md5(time() . $originalImage->getClientOriginalName());
+            Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
 
-            $imagePath = $request->file('image')->storeAs('uploads', $fileName, 'public');
-
-            $realisation->image = $imagePath;
+            $realisation->image = "uploads/{$fileName}.webp";
             $realisation->save();
         }
 
