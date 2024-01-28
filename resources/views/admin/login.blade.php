@@ -12,7 +12,7 @@
     <div class="login-page-content">        
         <div class="login-page-body">            
             <h2 class="login-page-title">Connectez-vous</h2>
-            <form action="{{ route('admin.login-post') }}" method="post">
+            <form action="{{ route('admin.login') }}" method="post">
                 @csrf
                 <div class="form-group">
                     <label for="username">Nom d'utilisateur</label>
