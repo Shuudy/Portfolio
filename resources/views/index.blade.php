@@ -49,6 +49,31 @@
     </div>
 </section>
 
+<section class="section">
+    <div class="section-content">
+        <div class="section-title">
+            <h2>Parcours</h2>
+        </div>
+        <div class="timeline-items">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2022 - 2024</div>
+                <div class="timeline-content">
+                    <h3>Brevet de Technicien Supérieur (BTS) SIO</h3>
+                    <p>Formation au BTS SIO au Lycée Gaston Berger à Lille, option SLAM.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2019 - 2022</div>
+                <div class="timeline-content">
+                    <h3>Baccalauréat Général</h3>
+                    <p>Formation au baccalauréat général au Lycée Gustave Eiffel à Armentières, avec une spécialisation en Mathématiques et NSI.</p>
+                </div>
+            </div>
+        </div>
+</section>
+
 <x-scroll-button/>
 <x-footer/>
 @endsection

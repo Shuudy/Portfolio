@@ -1,0 +1,70 @@
+.timeline {
+
+    &-items {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background-color: #2f363e;
+            left: calc(50% - 1px);
+
+            @media screen and (max-width: 1020px) {
+                left: 7px;
+            }
+        }
+    }
+
+    &-dot {
+        height: 16px;
+        width: 16px;
+        background-color: #000;
+        position: absolute;
+        left: calc(50% - 8px);
+        border-radius: 50%;
+        top: 10px;
+
+        @media screen and (max-width: 1020px) {
+            left: 0;
+        }
+    }
+
+    &-date {
+        font-size: 18px;
+        color: #000;
+        margin: 6px 0 15px;
+    }
+
+    &-item {
+        margin-bottom: 40px;
+        width: 100%;
+        position: relative;
+
+        &:nth-child(odd) {
+            padding-right: calc(50% + 30px);
+            text-align: right;
+
+            @media screen and (max-width: 1020px) {                
+                padding-right: 0;
+                text-align: left;
+            }
+        }
+        &:nth-child(even) {
+            padding-left: calc(50% + 30px);
+        }
+
+        @media screen and (max-width: 1020px) {
+            &:nth-child(even), &:nth-child(odd) {
+                padding-left: 37px;
+            }
+        }        
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
