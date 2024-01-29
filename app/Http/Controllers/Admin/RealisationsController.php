@@ -40,7 +40,7 @@ class RealisationsController extends Controller
             $fileName = md5(time() . $originalImage->getClientOriginalName());
             Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
 
-            $imagePath = "uploads/{$fileName}.webp";
+            $imagePath = "{$fileName}.webp";
         }
 
         $realisation = Realisation::create([
@@ -102,7 +102,7 @@ class RealisationsController extends Controller
             $fileName = md5(time() . $originalImage->getClientOriginalName());
             Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
 
-            $realisation->image = "uploads/{$fileName}.webp";
+            $realisation->image = "{$fileName}.webp";
             $realisation->save();
         }
 

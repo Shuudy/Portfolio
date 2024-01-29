@@ -6,7 +6,7 @@
 <x-navbar/>
 <x-sidebar/>
 
-<div class="title-bar" style="background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url({{ asset('storage/' . $realisation->image) }});">
+<div class="title-bar" style="background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url({{ asset('storage/uploads/' . $realisation->image) }});">
     <div class="title-bar-content">
         <div class="title-bar-subtitle">{{ $realisation->subtitle }}</div>
         <h1 class="title-bar-title">{{ $realisation->title }}</h1>
@@ -25,7 +25,7 @@
         <div class="card-list">
             @foreach ($lastRealisations as $lastRealisation)
                 <div class="card">
-                    <div class="card-image"><a href="{{ route('realisations.show', ['id' => $lastRealisation->id, 'slug' => $lastRealisation->slug]) }}"><img src="{{ asset('storage/' . $lastRealisation->image) }}" alt="Last realisation image" loading="lazy"></a></div>
+                    <div class="card-image"><a href="{{ route('realisations.show', ['id' => $lastRealisation->id, 'slug' => $lastRealisation->slug]) }}"><img src="{{ asset('storage/uploads/' . $lastRealisation->image) }}" alt="Last realisation image" loading="lazy"></a></div>
                     <div class="card-content">
                         <h2 class="card-title card-title-entry"><a href="{{ route('realisations.show', ['id' => $lastRealisation->id, 'slug' => $lastRealisation->slug]) }}">{{ $lastRealisation->title }}</a></h2>
                         <div class="card-subtitle">{{ $lastRealisation->subtitle }}</div>

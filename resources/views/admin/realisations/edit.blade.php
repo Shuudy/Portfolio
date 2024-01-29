@@ -32,7 +32,7 @@
                     <label for="imageInput">Image</label>
                     <div id="imageContainer" style="position: relative; display: inline-block;">
                         <input type="file" name="image" id="imageInput" accept="image/png, image/jpeg" class="form-control" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
-                        <img id="imagePreview" src="{{ $realisation->image ? asset('storage/' . $realisation->image) : asset('images/admin_imagepreview.png') }}" alt="Image Preview" class="img-thumbnail form-control @error('image') is-invalid @enderror" style="max-width: 150px; max-height: 150px;">
+                        <img id="imagePreview" src="{{ $realisation->image ? asset('storage/uploads/' . $realisation->image) : asset('images/admin_imagepreview.png') }}" alt="Image Preview" class="img-thumbnail form-control @error('image') is-invalid @enderror" style="max-width: 150px; max-height: 150px;">
                     </div>
                     @error('image')
                     <div class="invalid-feedback">{{ $message }}</div>
