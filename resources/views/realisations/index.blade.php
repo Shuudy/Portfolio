@@ -12,7 +12,7 @@
 <x-sidebar/>
 
 <div class="realisation-list">
-    @foreach($realisations as $realisation)
+    @forelse($realisations as $realisation)
     <div class="realisation">
         <div class="realisation-image">
             <a href="{{ route('realisations.show', ['slug' => $realisation->slug, 'id' => $realisation->id]) }}"><img src="{{ asset('storage/uploads/' . $realisation->image) }}" alt="Realisation image" lazy="loading"></a>
@@ -23,7 +23,9 @@
             <div class="realisation-desc"><p>{{ Str::limit(strip_tags($realisation->content), 200) }}</p></div>
         </div>
     </div>
-    @endforeach
+    @empty
+    <h1>No realisation found.</h1>
+    @endforelse
 </div>
 
 <x-scroll-button/>

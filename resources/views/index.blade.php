@@ -32,7 +32,7 @@
             <h2>Articles récents</h2>
         </div>
         <div class="card-list">
-            @foreach($lastRealisations as $realisation)
+            @forelse($lastRealisations as $realisation)
             <div class="card">
                 <div class="card-image"><a href="{{ route('realisations.show', ['slug' => $realisation->slug, 'id' => $realisation->id]) }}"><img src="{{ asset('storage/uploads/' . $realisation->image) }}" alt="Realisation image"></a></div>
                 <div class="card-content">
@@ -41,7 +41,9 @@
                     <div class="card-text">{!! Str::limit(strip_tags($realisation->content), 195) !!}</div>
                 </div>
             </div>
-            @endforeach
+            @empty
+            <h1>No realisation found.</h1>
+            @endforelse
         </div>
         <div class="section-btn">
             <a href="{{ route('realisations.index') }}" class="btn btn-section">VOIR TOUTES MES PRODUCTIONS</a>
