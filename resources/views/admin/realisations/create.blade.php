@@ -39,7 +39,7 @@
                 <div class="form-group">
                     <label for="subskills">Compétences</label>
                     <select name="subskills[]" id="subskills" multiple>
-                        @foreach($skills as $skill)
+                        @foreach($skills->load('subskills') as $skill)
                         <optgroup label="{{ $skill->name }}">
                             @foreach($skill->subskills as $subskill)
                             <option value="{{ $subskill->id }}">{{ $subskill->name }}</option>
