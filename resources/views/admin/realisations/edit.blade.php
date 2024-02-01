@@ -70,6 +70,7 @@
 
 <style>
     .ts-dropdown .active {
+        color: inherit;
         background-color: #f1f1f1;
     }
 </style>
