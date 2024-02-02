@@ -33,10 +33,12 @@ Route::prefix('realisations')->name('realisations.')->controller(PublicRealisati
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::controller(AuthController::class)->group(function () {
-        Route::get('/login', 'index')->name('login');
-        Route::post('/login', 'login')->middleware('throttle:3,1');
+        Route::prefix('/login')->middleware('guest')->group(function () {
+            Route::get('/', 'index')->name('login');
+            Route::post('/', 'login')->middleware('throttle:3,1');
+        });
 
-        Route::get('/logout', 'logout')->name('logout');
+        Route::get('/logout', 'logout')->middleware('auth')->name('logout');
     });
 
     Route::middleware('auth')->group(function () {
