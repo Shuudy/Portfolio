@@ -53,8 +53,8 @@
                 </div>
                 <div class="form-group">
                     <label for="quill_html">Contenu</label>
-                    <div id="quill"></div>
-                    <input type="hidden" id="quill_html" name="content" value="{{ $realisation->content }}"></input>
+                    <div id="quill" style="height: 300px;">{!! $realisation->content !!}</div>
+                    <input type="hidden" id="quill_html" name="content">
                     @error('content')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -93,47 +93,41 @@ new TomSelect('#subskills', {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 <style>
-#quill {
-    height: 300px;
-}
+.ql-container.ql-snow, .ql-toolbar.ql-snow { border-color: #dadfe5; }
 .ql-container.ql-snow {
-    border-color: #dadfe5;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
 }
 .ql-toolbar.ql-snow {
-    border-color: #dadfe5;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
 </style>
 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
 <script>
     const quill = new Quill('#quill', {
-    theme: 'snow',
-    modules: {
-        syntax: true,
-        toolbar: [
-            [{ 'font': [] }, { 'size': [] }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ 'color': [] }, { 'background': [] }],
-            ['blockquote', 'code-block'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-            ['direction', { 'align': [] }],
-            ['link', 'image', 'video'],
-            ['clean']
+        theme: 'snow',
+        modules: {
+            syntax: true,
+            toolbar: [
+                [{ 'font': [] }, { 'size': [] }],
+                ['bold', 'italic', 'underline', 'strike'],
+                [{ 'color': [] }, { 'background': [] }],
+                ['blockquote', 'code-block'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                ['direction', { 'align': [] }],
+                ['link', 'image', 'video'],
+                ['clean']
             ]
         }
     });
-    const contenuTexte = @json($realisation->content);
-    quill.clipboard.dangerouslyPasteHTML(contenuTexte);
 
-    quill.on('text-change', function(delta, oldDelta, source) {
+    document.querySelector('form').onsubmit = function () {
         document.getElementById("quill_html").value = quill.root.innerHTML;
-    });
+    };
 
     document.getElementById('imagePreview').addEventListener('click', function() {
         document.getElementById('imageInput').click();
