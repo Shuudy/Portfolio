@@ -70,6 +70,10 @@
         color: inherit;
         background-color: #f1f1f1;
     }
+    .ts-control {
+        border-radius: 4px;
+        border-color: #dadfe5;
+    }
 </style>
 
 <script>
@@ -88,6 +92,16 @@ new TomSelect('#subskills', {
 <style>
 #quill {
     height: 300px;
+}
+.ql-container.ql-snow {
+    border-color: #dadfe5;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.ql-toolbar.ql-snow {
+    border-color: #dadfe5;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 </style>
 
