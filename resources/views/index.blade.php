@@ -76,7 +76,7 @@
         </div>
 </section>
 
-<section class="section background padding-contact">
+<section class="section background padding-contact" id="contact">
     <div class="section-content">
         <div class="section-contact">
             <div class="section-contact-left">

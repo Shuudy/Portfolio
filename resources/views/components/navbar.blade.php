@@ -8,7 +8,7 @@
             <ul>
                 <li><a href="{{ route('index') }}#about-me"><span>Qui suis-je ?</span></a></li>
                 <li><a href="{{ route('realisations.index') }}"><span>Mes réalisations</span></a></li>
-                <li><a href=""><span>Contact</span></a></li>
+                <li><a href="{{ route('index') }}#contact"><span>Contact</span></a></li>
             </ul>
         </div>
     </div>
