@@ -94,19 +94,31 @@
 
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control" name="name" id="name" required>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" required>
+                        @error('name')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" name="email" id="email" required>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" required>
+                        @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="object">Objet</label>
-                        <input type="text" class="form-control" name="object" id="object" required>
+                        <input type="text" class="form-control @error('object') is-invalid @enderror" name="object" id="object" required>
+                        @error('object')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea name="message" class="form-control" id="message" required></textarea>
+                        <textarea name="message" class="form-control @error('message') is-invalid @enderror" id="message" required></textarea>
+                        @error('message')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
                     <button class="section-contact-button">Envoyer</button>
                 </form>
