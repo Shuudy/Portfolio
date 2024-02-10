@@ -50,7 +50,7 @@
                 </div>
                 <div class="form-group">
                     <label for="quill_html">Contenu</label>
-                    <div id="quill" style="height: 300px;">{!! $realisation->content !!}</div>
+                    <div id="quill" style="height: 300px;"></div>
                     <input type="hidden" id="quill_html" name="content">
                     @error('content')
                     <div class="invalid-feedback">{{ $message }}</div>
