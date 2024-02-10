@@ -18,6 +18,8 @@ use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::post('/contact', [HomeController::class, 'contact'])->name('contact');
+
 Route::view('/realisation', 'realisation');
 
 Route::prefix('realisations')->name('realisations.')->controller(PublicRealisationsController::class)->group(function () {

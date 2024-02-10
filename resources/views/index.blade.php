@@ -76,6 +76,45 @@
         </div>
 </section>
 
+<section class="section background padding-contact">
+    <div class="section-content">
+        <div class="section-contact">
+            <div class="section-contact-left">
+                <div class="section-contact-text-title">
+                    <h2>Me contacter</h2>
+                </div>
+                <div class="section-contact-text-info">
+                    <span>example@gmail.com</span>
+                    <span>+33 3 33 33 33 33</span>
+                </div>
+            </div>
+            <div class="section-contact-right">
+                <form action="{{ route('contact') }}" method="post">
+                    @csrf
+
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" class="form-control" name="name" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="object">Objet</label>
+                        <input type="text" class="form-control" name="object" id="object" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea name="message" class="form-control" id="message" required></textarea>
+                    </div>
+                    <button class="section-contact-button">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <x-scroll-button/>
 <x-footer/>
 @endsection
