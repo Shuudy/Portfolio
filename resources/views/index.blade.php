@@ -74,6 +74,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
 
 <section class="section background padding-contact" id="contact">
