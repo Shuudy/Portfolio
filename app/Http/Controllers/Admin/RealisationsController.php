@@ -95,7 +95,7 @@ class RealisationsController extends Controller
         if ($request->hasFile('image')) {
             // If a realization already has an image
             if ($realisation->image) {
-                Storage::disk('public')->delete($realisation->image);
+                Storage::disk('public')->delete('uploads/' . $realisation->image);
             }
             $originalImage = $request->file('image');
          
