@@ -37,6 +37,6 @@ class HomeController extends Controller
 
         Mail::to('destinaire@example.com')->send(new ContactMail($request->all()));
 
-        dd('message envoyé');
+        dd('Message envoyé');
     }
 }
