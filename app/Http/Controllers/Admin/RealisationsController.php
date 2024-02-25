@@ -13,17 +13,33 @@ use Illuminate\Support\Facades\Storage;
 
 class RealisationsController extends Controller
 {
+    /**
+     * Display a listing of all realisations.
+     * 
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         return view('admin.realisations.index');
     }
 
+    /**
+     * Show the form for creating a new realisation.
+     * 
+     * @return \Illuminate\View\View
+     */
     public function create()
     {
         $skills = Skill::all();
         return view('admin.realisations.create', compact('skills'));
     }
 
+    /**
+     * Store a newly created realisation.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $credentials = $request->validate([
@@ -58,6 +74,12 @@ class RealisationsController extends Controller
         return redirect()->route('admin.realisations.index')->with('success', 'Réalisation créée avec succès.');
     }
 
+    /**
+     * Show the form for editing the specified realisation.
+     * 
+     * @param \App\Models\Realisation $realisation
+     * @return \Illuminate\View\View
+     */
     public function edit(Realisation $realisation)
     {
         $skills = Skill::all();
@@ -67,6 +89,13 @@ class RealisationsController extends Controller
         return view('admin.realisations.edit', compact('realisation', 'skills', 'subskills', 'selectedSubskills'));
     }
 
+    /**
+     * Update the specified realisation.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Realisation $realisation
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, Realisation $realisation)
     {
         $request->validate([

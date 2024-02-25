@@ -7,12 +7,22 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-
+    /**
+     * Display the login form.
+     * 
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         return view('admin.login');
     }
 
+    /**
+     * Process the login form submission.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function login(Request $request)
     {
         // Check form fields
@@ -32,6 +42,11 @@ class AuthController extends Controller
         return back()->with('error', 'Incorrect information provided');
     }
 
+    /**
+     * Log the admin out of the application.
+     * 
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logout()
     {
         // Disconnect employee using Auth facade

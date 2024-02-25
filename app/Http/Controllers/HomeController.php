@@ -9,12 +9,23 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
+    /**
+     * Display the home page with the latest realisations.
+     * 
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         $lastRealisations = Realisation::latest()->take(3)->get();
         return view('index', compact('lastRealisations'));
     }
 
+    /**
+     * Process the contact form submission and send an email.
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function contact(Request $request)
     {
         $request->validate([
