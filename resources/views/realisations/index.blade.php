@@ -2,9 +2,7 @@
 
 @section('title', 'Mes réalisations')
 
-@php
-    $background = true;
-@endphp
+@php($background = true)
 
 @section('body')
 <x-navbar/>
