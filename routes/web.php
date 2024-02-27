@@ -32,6 +32,8 @@ Route::prefix('realisations')->name('realisations.')->controller(PublicRealisati
     Route::view('/test', 'realisation');
 });
 
+Route::view('/veille', 'veille');
+
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::controller(AuthController::class)->group(function () {
