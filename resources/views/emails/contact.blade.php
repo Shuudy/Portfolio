@@ -64,7 +64,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Nouveau formulaire de contact de {{ $formData['name'] }}</h1>
+        <h1>Nouvelle demande de contact de {{ $formData['name'] }}</h1>
         <div class="mail-info-container">
             <div class="mail-info">
                 <div class="mail-info-icon">
