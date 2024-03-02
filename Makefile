@@ -1,3 +1,12 @@
+
+installdev:
+	composer install
+	npm install
+	copy .env.example .env
+	php artisan key:generate
+	mkdir storage/app/public/uploads
+	php artisan storage:link
+
 deploy:
 	ssh anje7957@109.234.166.140 'cd ~/sites/jancieux.fr && git pull origin main && make install'
 
