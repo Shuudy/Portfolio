@@ -6,6 +6,7 @@ use App\Mail\ContactMail;
 use App\Models\Realisation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
 {
@@ -28,12 +29,16 @@ class HomeController extends Controller
      */
     public function contact(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'object' => 'required',
             'message' => 'required'
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->route('index', ['#contact'])->withErrors($validator);
+        }
 
         Mail::to('destinaire@example.com')->send(new ContactMail($request->all()));
 
