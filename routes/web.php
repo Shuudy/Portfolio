@@ -22,6 +22,10 @@ Route::post('/contact', [HomeController::class, 'contact'])->middleware('throttl
 
 Route::view('/realisation', 'realisation');
 
+Route::get('mon-cv', function () {
+    return response()->file(storage_path('app/public/cv/cv.pdf'));
+})->name('cv');
+
 Route::prefix('realisations')->name('realisations.')->controller(PublicRealisationsController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/{slug}-{id}', 'show')->where([

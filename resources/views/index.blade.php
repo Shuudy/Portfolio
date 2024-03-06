@@ -20,7 +20,7 @@
                 <p>J'ai également acquis une solide expérience en programmation dans divers langages, et je maîtrise particulièrement les défis liés au <b>développement web</b>. En parallèle de mes études, je participe activement à des projets open source et à des compétitions de programmation.</p>
             </div>
             <div class="section-btn">
-                <a href="" class="btn btn-section">Voir mon CV</a>
+                <a href="{{ route('cv') }}" target="_blank" class="btn btn-section">Voir mon CV</a>
             </div>
         </div>
     </div>
