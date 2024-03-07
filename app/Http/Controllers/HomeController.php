@@ -40,8 +40,8 @@ class HomeController extends Controller
             return redirect()->route('index', ['#contact'])->withErrors($validator);
         }
 
-        Mail::to('destinaire@example.com')->send(new ContactMail($request->all()));
+        Mail::to('contact@jancieux.fr')->send(new ContactMail($request->all()));
 
-        dd('Message envoyé');
+        return redirect()->route('index', ['#contact'])->with('success', 'Votre message a bien été envoyé. Merci pour votre intérêt ! Je vous répondrai dès que possible.');
     }
 }

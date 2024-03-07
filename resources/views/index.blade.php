@@ -123,6 +123,9 @@
                     </div>
                     <button class="section-contact-button">Envoyer</button>
                 </form>
+                @if(session('success'))
+                    <div class="contact-success">{{ session('success') }}</div>
+                @endif
             </div>
         </div>
     </div>
