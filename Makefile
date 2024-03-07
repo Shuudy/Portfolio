@@ -2,8 +2,8 @@
 install:
 	composer install
 	npm i
-	npm i sass
 	copy .env.example .env
 	php artisan key:generate
-	mkdir storage/app/public/uploads
+	mkdir -p storage/app/public/uploads
+	mkdir -p storage/app/public/cv
 	php artisan storage:link
