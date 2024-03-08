@@ -7,6 +7,7 @@
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
+            padding: 1em;
         }
 
         .container {
@@ -43,7 +44,7 @@
         }
 
         .mail-info-subtitle {
-            color: #afafaf;
+            color: #8f8f8f;
         }
 
         .mail-message {
@@ -64,7 +65,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>New contact form submission from {{ $formData['name'] }}</h1>
+        <h1>Demande de contact de <b>{{ $formData['name'] }}</b></h1>
         <div class="mail-info-container">
             <div class="mail-info">
                 <div class="mail-info-icon">

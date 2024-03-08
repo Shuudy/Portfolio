@@ -20,7 +20,7 @@
                 <p>J'ai également acquis une solide expérience en programmation dans divers langages, et je maîtrise particulièrement les défis liés au <b>développement web</b>. En parallèle de mes études, je participe activement à des projets open source et à des compétitions de programmation.</p>
             </div>
             <div class="section-btn">
-                <a href="" class="btn btn-section">Voir mon CV</a>
+                <a href="{{ route('cv') }}" target="_blank" class="btn btn-section">Voir mon CV</a>
             </div>
         </div>
     </div>
@@ -95,14 +95,14 @@
 
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" required>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" autocomplete="name" required>
                         @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" required>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" autocomplete="email" required>
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -123,6 +123,9 @@
                     </div>
                     <button class="section-contact-button">Envoyer</button>
                 </form>
+                @if(session('success'))
+                    <div class="contact-success">{{ session('success') }}</div>
+                @endif
             </div>
         </div>
     </div>

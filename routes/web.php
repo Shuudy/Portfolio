@@ -18,9 +18,13 @@ use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::post('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/contact', [HomeController::class, 'contact'])->middleware('throttle:5,1')->name('contact');
 
 Route::view('/realisation', 'realisation');
+
+Route::get('mon-cv', function () {
+    return response()->file(storage_path('app/public/cv/cv.pdf'));
+})->name('cv');
 
 Route::prefix('realisations')->name('realisations.')->controller(PublicRealisationsController::class)->group(function () {
     Route::get('/', 'index')->name('index');
