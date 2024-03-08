@@ -95,14 +95,14 @@
 
                     <div class="form-group">
                         <label for="name">Nom</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" required>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" autocomplete="name" required>
                         @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" required>
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" autocomplete="email" required>
                         @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
