@@ -33,7 +33,7 @@
                     <a class="techwatch-article-info-a" href="#"><button class="techwatch-article-info-button">Read more</button></a>
                 </div>
                 <div class="techwatch-article-image">
-                    <img src="https://www.zdnet.com/a/img/2024/02/08/fd21e2f7-2d29-48d2-bd2b-292f8c4c5eff/gettyimages-1443071845.jpg" alt="">
+                    <img src="https://i.pinimg.com/originals/9f/be/4a/9fbe4a3169303875336296e0ed28d923.jpg" alt="Article image">
                 </div>
             </div>
             @endfor
