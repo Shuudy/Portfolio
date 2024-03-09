@@ -125,6 +125,25 @@ new TomSelect('#subskills', {
         }
     });
 
+    quill.getModule('toolbar').addHandler('image', () => {
+        const url = prompt('Insérez l\'URL de l\'image:');
+        if (url) {
+            if (isValidImageUrl(url)) {
+                const range = quill.getSelection();
+                quill.insertEmbed(range.index, 'image', url);
+            } else {
+                alert('L\'URL spécifiée n\'est pas une image valide.');
+            }
+        }
+    });
+
+    function isValidImageUrl(url) {   
+        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];     
+        const cleanUrl = url.split('?')[0];
+
+        return imageExtensions.some(ext => cleanUrl.toLowerCase().endsWith(ext));
+    }
+
     document.querySelector('form').onsubmit = function () {
         document.getElementById("quill_html").value = quill.root.innerHTML;
     };
