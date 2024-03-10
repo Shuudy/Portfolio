@@ -12,7 +12,7 @@ class PaginationRealisationsTable extends Component
 
     public function render()
     {
-        $realisations = Realisation::orderBy('updated_at', 'desc')->select('id', 'title', 'subtitle')->paginate(10);
+        $realisations = Realisation::orderBy('updated_at', 'desc')->select('id', 'title', 'subtitle', 'created_at', 'updated_at')->paginate(10);
         return view('livewire.pagination-realisations-table', ['realisations' => $realisations]);
     }
 }
