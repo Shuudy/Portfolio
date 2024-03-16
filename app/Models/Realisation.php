@@ -15,4 +15,9 @@ class Realisation extends Model
     {
         return $this->belongsToMany(SubSkill::class, 'benefits', 'realisation_id', 'sub_skill_id');
     }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class, 'owns', 'realisation_id', 'skill_id');
+    }
 }
