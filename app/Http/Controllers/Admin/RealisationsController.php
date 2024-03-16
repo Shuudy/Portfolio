@@ -68,7 +68,11 @@ class RealisationsController extends Controller
         ]);
 
         if ($request->has('subskills')) {
-            $realisation->subskills()->attach($request->input('subskills'));
+            $subskills = $request->input('subskills');
+
+            $skillIds = SubSkill::whereIn('id', $subskills)->distinct()->pluck('skill_id');
+            $realisation->skills()->attach($skillIds);
+            $realisation->subskills()->attach($subskills);
         }
 
         return redirect()->route('admin.realisations.index')->with('success', 'Réalisation créée avec succès.');
@@ -107,9 +111,14 @@ class RealisationsController extends Controller
         ]);    
 
         $realisation->subskills()->detach();
+        $realisation->skills()->detach();
 
         if ($request->has('subskills')) {
-            $realisation->subskills()->attach($request->input('subskills'));
+            $subskills = $request->input('subskills');
+
+            $skillIds = SubSkill::whereIn('id', $subskills)->distinct()->pluck('skill_id');
+            $realisation->skills()->attach($skillIds);
+            $realisation->subskills()->attach($subskills);
         }
        
         $realisation->update($request->except('image'));
