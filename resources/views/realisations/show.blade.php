@@ -15,6 +15,27 @@
 
 <div class="text">
     <div class="text-content">{!! $realisation->content !!}</div>
+
+    <div class="accordion-container">
+        <h2>Compétences</h2>
+        <div class="accordion">
+            @foreach($realisation->skills as $skill)
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>{{ $skill->name }}</span>
+                    <span class="accordion-toggle"><svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg></span>
+                </div>                
+                <ul class="accordion-content">
+                    @foreach($skill->subskills as $subskill)
+                        @if($realisation->subskills->contains($subskill))
+                        <li>{{ $subskill->name }}</li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            @endforeach
+        </div>
+    </div>
 </div>
 
 <section class="section other">
@@ -38,4 +59,36 @@
 
 <x-scroll-button/>
 <x-footer/>
+
+<script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    accordionItems.forEach(item => {        
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+
+        header.addEventListener('click', () => {          
+
+            if (!content.classList.contains('active')) {
+                closeAllAccordions();
+            }
+
+            content.classList.toggle('active');
+
+            const arrowIcon = header.querySelector('.accordion-toggle');
+            arrowIcon.classList.toggle('rotate');
+        });
+    });
+
+    function closeAllAccordions() {
+        accordionItems.forEach(item => {
+            const content = item.querySelector('.accordion-content');
+            const arrowIcon = item.querySelector('.accordion-toggle');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                arrowIcon.classList.remove('rotate');
+            }
+        });
+    }
+</script>
 @endsection
