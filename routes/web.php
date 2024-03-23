@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\RealisationsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SkillsController;
 use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 
 /*
@@ -34,6 +35,12 @@ Route::prefix('realisations')->name('realisations.')->controller(PublicRealisati
     ])->name('show');
 
     Route::view('/test', 'realisation');
+});
+
+Route::controller(SkillsController::class)->group(function () {
+    Route::get('/competences', 'index')->name('skills');
+    Route::get('/competences/{skill}', 'show')->name('skills.show');
+    Route::get('/sous-competences/{subskill}', 'showRealisations')->name('subskills.show');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
