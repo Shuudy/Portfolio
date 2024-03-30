@@ -85,8 +85,8 @@
                     <h2>Me contacter</h2>
                 </div>
                 <div class="section-contact-text-info">
-                    <span>example@gmail.com</span>
-                    <span>+33 3 33 33 33 33</span>
+                    <span>ancieux.jerome059@gmail.com</span>
+                    <span>+33 6 23 13 09 13</span>
                 </div>
             </div>
             <div class="section-contact-right">
