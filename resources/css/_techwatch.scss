@@ -1,0 +1,80 @@
+
+.techwatch {
+    &-articles {
+        margin: 1em 0;
+        width: 100%;        
+    }
+
+    &-article {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            align-items: normal;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 3em;
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+
+            &-title {
+                font-weight: bold;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &-desc, &-date {
+                font-size: 15px;
+                color: #a7a7a7;
+            }
+
+            &-a {
+                width: max-content;
+                margin-top: 1em;
+            }
+
+            &-button {
+                height: 35px;
+                border: none;
+                padding: 0 20px;
+                color: #000;
+                background-color: #f3f3f3;
+                border-radius: 25px;
+
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #e2e4e6;
+                }
+            }
+        }
+
+        &-image {
+            height: 150px;
+            margin-left: 1em;
+
+            @media screen and (max-width: 1024px) {
+                margin-top: 1em;
+                margin-left: 0;
+                max-width: 250px;
+            }
+            img {
+                height: inherit;
+                border-radius: 9px;
+                object-fit: cover;
+
+                @media screen and (max-width: 1024px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

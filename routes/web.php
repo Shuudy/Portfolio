@@ -43,6 +43,8 @@ Route::controller(SkillsController::class)->group(function () {
     Route::get('/sous-competences/{subskill}', 'showRealisations')->name('subskills.show');
 });
 
+Route::view('/veille-technologique', 'veille');
+
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::controller(AuthController::class)->group(function () {
