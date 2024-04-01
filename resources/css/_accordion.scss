@@ -17,6 +17,10 @@
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
+
+        &:hover span:first-child {
+            text-decoration: underline;
+        }
     }
 
     &-content {
