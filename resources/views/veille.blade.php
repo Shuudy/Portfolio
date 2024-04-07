@@ -30,7 +30,7 @@
                     <div class="techwatch-article-info-date">30 mars. 2024</div>
                     <div class="techwatch-article-info-title"><a href="https://www.01net.com/actualites/comment-technologie-prepare-avenement-des-ordinateurs-quantiques.html">Comment les acteurs de la Tech se préparent à l’essor (et à la menace) des ordinateurs quantiques</a></div>
                     <div class="techwatch-article-info-desc">La technologie se prépare progressivement à l’arrivée des ordinateurs quantiques. Conscients des implications de l’informatique quantique en matière...</div>
-                    <a class="techwatch-article-info-a" href="https://www.01net.com/actualites/comment-technologie-prepare-avenement-des-ordinateurs-quantiques.html"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.01net.com/actualites/comment-technologie-prepare-avenement-des-ordinateurs-quantiques.html"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://www.01net.com/app/uploads/2024/03/cybersecurite-quantique-680x453.jpg" alt="Article image">
@@ -42,7 +42,7 @@
                     <div class="techwatch-article-info-date">19 mars. 2024</div>
                     <div class="techwatch-article-info-title"><a href="https://www.phonandroid.com/windows-va-integrer-une-nouvelle-norme-de-securite-votre-pc-est-il-compatible.html">Windows va intégrer une nouvelle norme de sécurité, votre matériel est-il compatible ?</a></div>
                     <div class="techwatch-article-info-desc">Microsoft renforce la sécurité des systèmes Windows en exigeant l'utilisation de clés RSA de 2048 bits pour les protocoles de sécurité...</div>
-                    <a class="techwatch-article-info-a" href="https://www.phonandroid.com/windows-va-integrer-une-nouvelle-norme-de-securite-votre-pc-est-il-compatible.html"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.phonandroid.com/windows-va-integrer-une-nouvelle-norme-de-securite-votre-pc-est-il-compatible.html"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://wp-pa.phonandroid.com/uploads/2024/03/data-center-microsoft.jpg" alt="Article image">
@@ -54,7 +54,7 @@
                     <div class="techwatch-article-info-date">13 mars. 2024</div>
                     <div class="techwatch-article-info-title"><a href="https://www.servicesmobiles.fr/imessage-se-dote-du-chiffrement-post-quantique-95852">iMessage se dote du chiffrement post-quantique</a></div>
                     <div class="techwatch-article-info-desc">Les ordinateurs quantiques utiles ne sont pas encore une réalité. Toutefois, Apple compte déployer massivement...</div>
-                    <a class="techwatch-article-info-a" href="https://www.servicesmobiles.fr/imessage-se-dote-du-chiffrement-post-quantique-95852"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.servicesmobiles.fr/imessage-se-dote-du-chiffrement-post-quantique-95852"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://www.servicesmobiles.fr/wp-content/uploads/2023/11/imessage.png.webp" alt="Article image">
@@ -66,7 +66,7 @@
                     <div class="techwatch-article-info-date">28 déc. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://incyber.org/article/avis-dexpert-la-cryptographie-xenomorphique-une-nouvelle-methode-de-chiffrement-de-bout-en-bout-inspiree-des-neurosciences/">La cryptographie xénomorphique, une nouvelle méthode de chiffrement de bout en bout...</a></div>
                     <div class="techwatch-article-info-desc">Réussir la transformation numérique implique de mettre en place de nouveaux systèmes et méthodes de sécurité informatiques....</div>
-                    <a class="techwatch-article-info-a" href="https://incyber.org/article/avis-dexpert-la-cryptographie-xenomorphique-une-nouvelle-methode-de-chiffrement-de-bout-en-bout-inspiree-des-neurosciences/"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://incyber.org/article/avis-dexpert-la-cryptographie-xenomorphique-une-nouvelle-methode-de-chiffrement-de-bout-en-bout-inspiree-des-neurosciences/"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://incyber.org//wp-content/uploads/import/post/2023/12/avis-dexpert-la-cryptographie-xenomorphique-une-nouvelle-methode-de-chiffrement-de-bout-en-bout-inspiree-des-neurosciences-1386x735.jpg" alt="Article image">
@@ -78,7 +78,7 @@
                     <div class="techwatch-article-info-date">12 déc. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://www.numerama.com/tech/1586890-ca-y-est-le-chiffrement-post-quantique-du-web-decolle-un-tout-petit-peu.html">Ça y est, le chiffrement post-quantique du web décolle (un tout petit peu)</a></div>
                     <div class="techwatch-article-info-desc">Cloudflare a remarqué un léger bond du chiffrement post-quantique, via TLS 1.3. Un bond encore modeste, mais qui traduit un début de déploiement d’un nouveau....</div>
-                    <a class="techwatch-article-info-a" href="https://www.numerama.com/tech/1586890-ca-y-est-le-chiffrement-post-quantique-du-web-decolle-un-tout-petit-peu.html"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.numerama.com/tech/1586890-ca-y-est-le-chiffrement-post-quantique-du-web-decolle-un-tout-petit-peu.html"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://c0.lestechnophiles.com/www.numerama.com/wp-content/uploads/2023/12/chiffrement-1024x576.jpg?avif=1&key=0c898d43" alt="Article image">
@@ -90,7 +90,7 @@
                     <div class="techwatch-article-info-date">27 nov. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://www.lebigdata.fr/cles-chiffrement-fuite">Alerte ! Les clés de chiffrement sont en fuite sur internet !</a></div>
                     <div class="techwatch-article-info-desc">Fuite des clés de chiffrement : des erreurs matérielles en cause. Une équipe de chercheurs...</div>
-                    <a class="techwatch-article-info-a" href="https://www.lebigdata.fr/cles-chiffrement-fuite"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.lebigdata.fr/cles-chiffrement-fuite"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://www.lebigdata.fr/wp-content/uploads/2023/11/cles-chiffrement-660x330.png" alt="Article image">
@@ -102,7 +102,7 @@
                     <div class="techwatch-article-info-date">14 nov. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://www.lemondeinformatique.fr/actualites/lire-telex-le-chiffrement-de-tetra-dans-le-domaine-public-lockbit-revendique-l-attaque-contre-le-loiret-apple-lance-tap-to-pay-en-france-92130.html">Telex : Le chiffrement de Tetra dans le domaine public</a></div>
                     <div class="techwatch-article-info-desc">Le chiffrement de Tetra dans le domaine public. Après la découverte de plusieurs failles dans le chiffrement du réseau de radiocommunication Tetra...</div>
-                    <a class="techwatch-article-info-a" href="https://www.lemondeinformatique.fr/actualites/lire-telex-le-chiffrement-de-tetra-dans-le-domaine-public-lockbit-revendique-l-attaque-contre-le-loiret-apple-lance-tap-to-pay-en-france-92130.html"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.lemondeinformatique.fr/actualites/lire-telex-le-chiffrement-de-tetra-dans-le-domaine-public-lockbit-revendique-l-attaque-contre-le-loiret-apple-lance-tap-to-pay-en-france-92130.html"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://veille-cyber.com/wp-content/uploads/2023/07/chiffrement-678x381.jpg" alt="Article image">
@@ -114,7 +114,7 @@
                     <div class="techwatch-article-info-date">16 oct. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://www.lemagit.fr/actualites/366555597/Cosmian-mixe-chiffrement-pre-et-post-quantique">Cosmian mixe chiffrement pré- et post-quantique</a></div>
                     <div class="techwatch-article-info-desc">En collaboration avec l’ENS, la startup a accéléré ses algorithmes et propose une suite de sécurité complète...</div>
-                    <a class="techwatch-article-info-a" href="https://www.lemagit.fr/actualites/366555597/Cosmian-mixe-chiffrement-pre-et-post-quantique"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.lemagit.fr/actualites/366555597/Cosmian-mixe-chiffrement-pre-et-post-quantique"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://www.lemagit.fr/rms/onlineimages/security_a292905838.jpg" alt="Article image">
@@ -126,7 +126,7 @@
                     <div class="techwatch-article-info-date">4 oct. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://securite.developpez.com/actu/349196/Les-ordinateurs-quantiques-pourraient-craquer-le-chiffrement-d-Internet-plus-rapidement-que-prevu-grace-a-un-nouvel-algorithme-supposement-plus-efficace-que-l-algorithme-de-Shor-vieux-de-30-ans/">Les ordinateurs quantiques pourraient craquer le chiffrement d'Internet...</a></div>
                     <div class="techwatch-article-info-desc">Un algorithme quantique menace de rendre inutiles nos principaux systèmes cryptographiques plus rapidement que prévu. Dans un article de recherche...</div>
-                    <a class="techwatch-article-info-a" href="https://securite.developpez.com/actu/349196/Les-ordinateurs-quantiques-pourraient-craquer-le-chiffrement-d-Internet-plus-rapidement-que-prevu-grace-a-un-nouvel-algorithme-supposement-plus-efficace-que-l-algorithme-de-Shor-vieux-de-30-ans/"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://securite.developpez.com/actu/349196/Les-ordinateurs-quantiques-pourraient-craquer-le-chiffrement-d-Internet-plus-rapidement-que-prevu-grace-a-un-nouvel-algorithme-supposement-plus-efficace-que-l-algorithme-de-Shor-vieux-de-30-ans/"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://www.developpez.net/forums/attachments/p403856d1534284345/x/y/z/" alt="Article image">
@@ -138,7 +138,7 @@
                     <div class="techwatch-article-info-date">21 sept. 2023</div>
                     <div class="techwatch-article-info-title"><a href="https://www.lemondeinformatique.fr/actualites/lire-les-reseaux-bases-sur-udp-vulnerables-a-des-attaques-dos-en-boucle-93344.html">Pour contrer les attaques quantiques, Signal adapte son chiffrement</a></div>
                     <div class="techwatch-article-info-desc">Signal renforce son protocole de chiffrement pour résister aux attaques quantiques. Une mise à jour de la spécification X3DH, baptisée PQXDH, est...</div>
-                    <a class="techwatch-article-info-a" href="https://www.lemondeinformatique.fr/actualites/lire-les-reseaux-bases-sur-udp-vulnerables-a-des-attaques-dos-en-boucle-93344.html"><button class="techwatch-article-info-button">Read more</button></a>
+                    <a class="techwatch-article-info-a" href="https://www.lemondeinformatique.fr/actualites/lire-les-reseaux-bases-sur-udp-vulnerables-a-des-attaques-dos-en-boucle-93344.html"><button class="techwatch-article-info-button">En savoir plus</button></a>
                 </div>
                 <div class="techwatch-article-image">
                     <img src="https://images.itnewsinfo.com/lmi/articles/grande/000000093800.png" alt="Article image">
