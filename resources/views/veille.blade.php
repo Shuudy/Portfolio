@@ -6,7 +6,7 @@
 <x-navbar/>
 <x-sidebar/>
 
-<div class="title-bar" style="background-image: linear-gradient(160deg, rgba(0,0,0,0) 0%, #000 100%), url(https://free4kwallpapers.com/uploads/originals/2015/09/15/wallpaper-download-free-houses-26258.jpg);">
+<div class="title-bar" style="background-image: linear-gradient(160deg, rgba(0,0,0,0) 0%, #000 100%), url(https://www.virtru.com/hubfs/Imported_Blog_Media/encryptionkey-2.jpg);">
     <div class="title-bar-content">
     <div class="title-bar-subtitle">Veille technologique</div>
         <h1 class="title-bar-title">Chiffrement des données</h1>
