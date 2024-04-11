@@ -23,9 +23,10 @@
         <p>Pour mener une velle efficace sur le chiffrement des données, divers outils et plateformes sont disponibles, notamment <b>Google News</b>, <b>Digipad</b>, <b>Feedly</b> et d'autres agrégateurs de contenu en ligne spécialisés dans les actualités technologiques et la sécurité de l'information. Ces outils permettent de suivre les dernières tendances, les avis d'experts, les annonces de nouveaux algorithmes de chiffrement et les incidents de sécurité liés au chiffrement, fournissant ainsi une base solide pour une prise de décision informée en matière de sécurité des données.</p>
 
         <h1>Digipad</h1>
-        <img src="https://uploads.portfolio.jancieux.fr/images/6615308025532.webp" alt="">
+        <img src="https://uploads.portfolio.jancieux.fr/images/6615308025532.webp" alt="Digipad">
         <h1>Google alertes</h1>
-        <img src="https://uploads.portfolio.jancieux.fr/images/661531e19a2c3.webp" alt="">
+        <img src="https://uploads.portfolio.jancieux.fr/images/661531e19a2c3.webp" alt="Google alertes">
+        <img src="https://uploads.portfolio.jancieux.fr/images/66180b6955ad9.webp" alt="Google alertes mails">
         <h1>Articles</h1>
         <div class="techwatch-articles">
 
