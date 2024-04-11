@@ -67,6 +67,22 @@
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
+                <div class="timeline-date">janv, 2024 - fév, 2024</div>
+                <div class="timeline-content">
+                    <h3>Stage à la Mairie d'Armentières</h3>
+                    <p>Réalisation d'une application web Laravel avec GLPI ainsi qu'une application web pour la création de ticket avec un formulaire dynamique.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">mai, 2023 - juin, 2023</div>
+                <div class="timeline-content">
+                    <h3>Stage au Lycée Ile de Flandre</h3>
+                    <p>Assistance informatique (remplacement du matériel), création d'un site web à des fins de visibilité</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
                 <div class="timeline-date">2019 - 2022</div>
                 <div class="timeline-content">
                     <h3>Baccalauréat Général</h3>
