@@ -16,7 +16,6 @@
 <div class="text">
     <div class="text-content">{!! $realisation->content !!}</div>
 
-    @if($realisation->skills->isNotEmpty())
     <div class="accordion-container">
         <h2>Compétences</h2>
         <div class="accordion">
@@ -37,7 +36,6 @@
             @endforeach
         </div>
     </div>
-    @endif
 </div>
 
 <section class="section other">
