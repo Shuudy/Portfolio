@@ -18,7 +18,6 @@ use App\Http\Controllers\RealisationsController as PublicRealisationsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::post('/contact', [HomeController::class, 'contact'])->middleware('throttle:5,1')->name('contact');
 
 Route::view('/realisation', 'realisation');
 
