@@ -53,10 +53,8 @@ class RealisationsController extends Controller
         if ($request->hasFile('image')) {
             $originalImage = $request->file('image');
         
-            $fileName = md5(time() . $originalImage->getClientOriginalName());
+            $fileName = uniqid();
             Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
-
-            $imagePath = "{$fileName}.webp";
         }
 
         $realisation = Realisation::create([
@@ -64,7 +62,7 @@ class RealisationsController extends Controller
             'subtitle' => $credentials['subtitle'],
             'slug' => Str::slug($credentials['title']),
             'content' => $credentials['content'],
-            'image' => $imagePath ?? null,
+            'image' => $fileName ?? null,
         ]);
 
         if ($request->has('subskills')) {
@@ -136,11 +134,11 @@ class RealisationsController extends Controller
                 Storage::disk('public')->delete('uploads/' . $realisation->image);
             }
             $originalImage = $request->file('image');
-         
-            $fileName = md5(time() . $originalImage->getClientOriginalName());
+            
+            $fileName = uniqid();
             Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
 
-            $realisation->image = "{$fileName}.webp";
+            $realisation->image = $fileName;
             $realisation->save();
         }
 

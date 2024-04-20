@@ -15,7 +15,7 @@
     @forelse($realisations as $realisation)
     <div class="realisation">
         <div class="realisation-image">
-            <a href="{{ route('realisations.show', ['slug' => $realisation->slug, 'id' => $realisation->id]) }}"><img src="{{ asset('storage/uploads/' . $realisation->image) }}" alt="Realisation image" lazy="loading"></a>
+            <a href="{{ route('realisations.show', ['slug' => $realisation->slug, 'id' => $realisation->id]) }}"><img src="{{ asset('storage/uploads/' . $realisation->image . '.webp') }}" alt="Realisation image" lazy="loading"></a>
         </div>
         <div class="realisation-content">
             <div class="realisation-subtitle">{{ $realisation->subtitle }}</div>

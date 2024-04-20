@@ -16,8 +16,8 @@
                 <td>{{ $realisation->id }}</td>
                 <td><a class="link" href="{{ route('admin.realisations.edit', $realisation->id) }}">{{ Str::limit($realisation->title, 45) }}</a></td>
                 <td>{{ Str::limit($realisation->subtitle, 35) }}</td>
-                <td>{{ \Carbon\Carbon::parse($realisation->updated_at)->isoFormat('D MMM, G') }}</td>
-                <td>{{ \Carbon\Carbon::parse($realisation->created_at)->isoFormat('D MMM, G') }}</td>
+                <td>{{ \Carbon\Carbon::parse($realisation->updated_at)->isoFormat('D MMM G') }}</td>
+                <td>{{ \Carbon\Carbon::parse($realisation->created_at)->isoFormat('D MMM G') }}</td>
                 <td><a class="action" href="{{ route('admin.realisations.edit', $realisation->id) }}">Edit</a></td>
             </tr>
             @empty
