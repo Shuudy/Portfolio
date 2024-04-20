@@ -53,7 +53,7 @@ class RealisationsController extends Controller
         if ($request->hasFile('image')) {
             $originalImage = $request->file('image');
         
-            $fileName = md5(time() . $originalImage->getClientOriginalName());
+            $fileName = uniqid();
             Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
 
             $imagePath = "{$fileName}.webp";
@@ -136,8 +136,8 @@ class RealisationsController extends Controller
                 Storage::disk('public')->delete('uploads/' . $realisation->image);
             }
             $originalImage = $request->file('image');
-         
-            $fileName = md5(time() . $originalImage->getClientOriginalName());
+            
+            $fileName = uniqid();
             Image::read($originalImage)->toWebP(85)->save("storage/uploads/{$fileName}.webp");
 
             $realisation->image = "{$fileName}.webp";
