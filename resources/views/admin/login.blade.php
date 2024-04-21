@@ -16,11 +16,11 @@
                 @csrf
                 <div class="form-group">
                     <label for="username">Nom d'utilisateur</label>
-                    <input type="text" id="username" class="form-control" placeholder="Votre nom d'utilisateur" name="username" autofocus>
+                    <input type="text" id="username" class="form-control" placeholder="Votre nom d'utilisateur" name="username" autofocus required>
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" class="form-control" placeholder="Votre mot de passe" name="password">
+                    <input type="password" id="password" class="form-control" placeholder="Votre mot de passe" name="password" required>
                 </div>
                 <button type="submit" class="btn w-100">Se connecter</button>
             </form>
