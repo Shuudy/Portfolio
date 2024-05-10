@@ -64,14 +64,6 @@ class RealisationsController extends Controller
             'image' => $fileName ?? null,
         ]);
 
-        if ($request->has('subskills')) {
-            $subskills = $request->input('subskills');
-
-            $skillIds = SubSkill::whereIn('id', $subskills)->distinct()->pluck('skill_id');
-            $realisation->skills()->attach($skillIds);
-            $realisation->subskills()->attach($subskills);
-        }
-
         return redirect()->route('admin.realisations.index')->with('success', 'Réalisation créée avec succès.');
     }
 
