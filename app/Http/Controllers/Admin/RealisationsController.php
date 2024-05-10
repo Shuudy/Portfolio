@@ -30,8 +30,7 @@ class RealisationsController extends Controller
      */
     public function create()
     {
-        $skills = Skill::all();
-        return view('admin.realisations.create', compact('skills'));
+        return view('admin.realisations.create');
     }
 
     /**
