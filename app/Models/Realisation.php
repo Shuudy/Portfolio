@@ -10,14 +10,4 @@ class Realisation extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'subtitle', 'content', 'image', 'slug'];
-
-    public function subskills()
-    {
-        return $this->belongsToMany(SubSkill::class, 'benefits', 'realisation_id', 'sub_skill_id');
-    }
-
-    public function skills()
-    {
-        return $this->belongsToMany(Skill::class, 'owns', 'realisation_id', 'skill_id');
-    }
 }
