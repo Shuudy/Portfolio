@@ -38,19 +38,7 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-
-                <div class="form-group">
-                    <label for="subskills">Compétences</label>
-                    <select name="subskills[]" id="subskills" multiple>
-                        @foreach($skills->load('subskills') as $skill)
-                        <optgroup label="{{ $skill->name }}">
-                            @foreach($skill->subskills as $subskill)
-                            <option value="{{ $subskill->id }}" {{ in_array($subskill->id, $selectedSubskills) ? 'selected' : '' }}>{{ $subskill->name }}</option>
-                            @endforeach
-                        </optgroup>
-                        @endforeach
-                    </select>
-                </div>
+                
                 <div class="form-group">
                     <label for="quill_html">Contenu</label>
                     <div id="quill" style="height: 300px;">{!! $realisation->content !!}</div>
@@ -64,31 +52,6 @@
         </div>
     </div>
 </div>
-
-<link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
-
-<style>
-    .ts-dropdown .active {
-        color: inherit;
-        background-color: #f1f1f1;
-    }
-    .ts-control {
-        border-radius: 4px;
-        border-color: #dadfe5;
-    }
-</style>
-
-<script>
-new TomSelect('#subskills', {
-    plugins: {
-		'checkbox_options': {
-			'checkedClassNames':   ['ts-checked'],
-			'uncheckedClassNames': ['ts-unchecked'],
-		}
-	}
-});
-</script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
 <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">

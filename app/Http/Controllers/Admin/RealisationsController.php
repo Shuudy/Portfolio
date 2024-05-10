@@ -75,11 +75,7 @@ class RealisationsController extends Controller
      */
     public function edit(Realisation $realisation)
     {
-        $skills = Skill::all();
-        $subskills = SubSkill::all();
-
-        $selectedSubskills = $realisation->subskills->pluck('id')->toArray();
-        return view('admin.realisations.edit', compact('realisation', 'skills', 'subskills', 'selectedSubskills'));
+        return view('admin.realisations.edit', compact('realisation'));
     }
 
     /**
@@ -95,20 +91,8 @@ class RealisationsController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'content' => 'required|string|min:32',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'subskills' => 'array',
-        ]);    
-
-        $realisation->subskills()->detach();
-        $realisation->skills()->detach();
-
-        if ($request->has('subskills')) {
-            $subskills = $request->input('subskills');
-
-            $skillIds = SubSkill::whereIn('id', $subskills)->distinct()->pluck('skill_id');
-            $realisation->skills()->attach($skillIds);
-            $realisation->subskills()->attach($subskills);
-        }
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
        
         $realisation->update($request->except('image'));
 
