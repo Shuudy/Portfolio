@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Skill;
-use App\Models\SubSkill;
 use App\Models\Realisation;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -45,8 +43,7 @@ class RealisationsController extends Controller
             'title' => 'required',
             'subtitle' => 'required',
             'content' => 'required|string|min:32',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
-            'subskills' => 'array'
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         if ($request->hasFile('image')) {
